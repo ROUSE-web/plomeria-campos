@@ -1,0 +1,34 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import MainSection from "@components/ui/sections/MainSection.astro";
+---
+
+<BaseLayout title="Proyectos" description="Algunos proyectos realizados">
+    <!-- incrustrar un video de youtube -->
+    <div
+        class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+    >
+        <div class="mx-auto mb-10 max-w-2xl text-center lg:mb-14">
+            <h2
+                class="text-4xl font-bold text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
+            >
+                Nuestros proyectos
+            </h2>
+            <p class="mt-1 text-pretty text-neutral-600 dark:text-neutral-400">
+                Conoce más sobre nuestros proyectos realizados
+            </p>
+        </div>
+        <div
+            class="relative overflow-hidden mx-auto"
+            style="padding-top: 56.25%; max-width: 1024px;"
+        >
+            <iframe
+                class="absolute top-0 left-0 w-full h-full"
+                src="https://www.youtube.com/embed/ij2S_ggtWJM"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+    </div>
+</BaseLayout>

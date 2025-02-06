@@ -1,0 +1,140 @@
+---
+import BrandLogo from "@components/ui/logos/BrandLogo.astro";
+import Image from "@components/ui/images/Image.astro";
+import footerBanner from "@images/footer.webp";
+import { FooterLinks, SITE } from "@/config";
+
+var today = new Date();
+var year = today.getFullYear();
+---
+
+<footer class="w-full bg-neutral-300 dark:bg-neutral-900">
+    <div
+        class="mx-auto w-full max-w-[85rem] px-2 py-5 sm:px-6 lg:px-8 lg:pt-12 2xl:max-w-screen-2xl"
+    >
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 md:grid-cols-5">
+            <div
+                class="col-span-full flex justify-center sm:grid sm:col-span-1"
+            >
+                <BrandLogo class="h-auto w-28 rounded-full" />
+            </div>
+            <div
+                class="grid col-span-full grid-cols-4 justify-center items-center sm:col-span-2 sm:-mt-2 md:-mt-20"
+            >
+                <a
+                    href="https://www.facebook.com/plomeriacampos"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="flex flex-col justify-center items-center"
+                >
+                    <svg
+                        class="mt-1 flex-shrink-0 size-12 lg:size-16 text-neutral-600 hover:text-[#274e86] dark:text-neutral-300 dark:hover:text-[#80cce2]"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            d="M13.135 6H15V3h-1.865a4.147 4.147 0 0 0-4.142 4.142V9H7v3h2v9.938h3V12h2.021l.592-3H12V6.591A.6.6 0 0 1 12.592 6h.543Z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </a>
+                <a
+                    href="https://wa.me/59178300509/?text=Hola%2C%20me%20gustaría%20saber%20más%20sobre%20sus%20servicios"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="flex flex-col justify-center items-center"
+                >
+                    <svg
+                        class="mt-1 flex-shrink-0 size-12 lg:size-16 text-neutral-600 hover:text-[#075e54] dark:text-neutral-300 dark:hover:text-[#25d366]"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            fill="currentColor"
+                            fill-rule="evenodd"
+                            d="M12 4a8 8 0 0 0-6.895 12.06l.569.718-.697 2.359 2.32-.648.379.243A8 8 0 1 0 12 4ZM2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10a9.96 9.96 0 0 1-5.016-1.347l-4.948 1.382 1.426-4.829-.006-.007-.033-.055A9.958 9.958 0 0 1 2 12Z"
+                            clip-rule="evenodd"></path>
+                        <path
+                            fill="currentColor"
+                            d="M16.735 13.492c-.038-.018-1.497-.736-1.756-.83a1.008 1.008 0 0 0-.34-.075c-.196 0-.362.098-.49.291-.146.217-.587.732-.723.886-.018.02-.042.045-.057.045-.013 0-.239-.093-.307-.123-1.564-.68-2.751-2.313-2.914-2.589-.023-.04-.024-.057-.024-.057.005-.021.058-.074.085-.101.08-.079.166-.182.249-.283l.117-.14c.121-.14.175-.25.237-.375l.033-.066a.68.68 0 0 0-.02-.64c-.034-.069-.65-1.555-.715-1.711-.158-.377-.366-.552-.655-.552-.027 0 0 0-.112.005-.137.005-.883.104-1.213.311-.35.22-.94.924-.94 2.16 0 1.112.705 2.162 1.008 2.561l.041.06c1.161 1.695 2.608 2.951 4.074 3.537 1.412.564 2.081.63 2.461.63.16 0 .288-.013.4-.024l.072-.007c.488-.043 1.56-.599 1.804-1.276.192-.534.243-1.117.115-1.329-.088-.144-.239-.216-.43-.308Z"
+                        ></path>
+                    </svg>
+                </a>
+                <a
+                    href="mailto:serviplom29@gmail.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="flex flex-col justify-center items-center"
+                >
+                    <svg
+                        class="mt-1 flex-shrink-0 size-11 lg:size-14 text-neutral-600 hover:text-[#274e86] dark:text-neutral-300 dark:hover:text-[#80cce2]"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        ><path
+                            d="M21.2 8.4c.5.38.8.97.8 1.6v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V10a2 2 0 0 1 .8-1.6l8-6a2 2 0 0 1 2.4 0l8 6Z"
+                        ></path><path
+                            d="m22 10-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 10"
+                        ></path></svg
+                    >
+                </a>
+                <a
+                    href="https://www.youtube.com/channel/UC9J"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="flex flex-col justify-center items-center"
+                >
+                    <svg
+                        class="mt-1 flex-shrink-0 size-12 lg:size-16 text-neutral-600 hover:text-[#c4302b] dark:text-neutral-300 dark:hover:text-[#c4302b]"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            d="M21.7 8.037a4.26 4.26 0 0 0-.789-1.964 2.84 2.84 0 0 0-1.984-.839c-2.767-.2-6.926-.2-6.926-.2s-4.157 0-6.928.2a2.836 2.836 0 0 0-1.983.839 4.225 4.225 0 0 0-.79 1.965 30.146 30.146 0 0 0-.2 3.206v1.5a30.12 30.12 0 0 0 .2 3.206c.094.712.364 1.39.784 1.972.604.536 1.38.837 2.187.848 1.583.151 6.731.2 6.731.2s4.161 0 6.928-.2a2.844 2.844 0 0 0 1.985-.84 4.27 4.27 0 0 0 .787-1.965 30.12 30.12 0 0 0 .2-3.206v-1.516a30.672 30.672 0 0 0-.202-3.206Zm-11.692 6.554v-5.62l5.4 2.819-5.4 2.801Z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </a>
+            </div>
+            <div class="col-span-2 flex justify-center mt-2">
+                <div
+                    class="max-w-[345px] max-h-[240px] -mt-10 scale-75 hidden md:block"
+                >
+                    <Image
+                        src={footerBanner}
+                        alt={SITE.title}
+                        class="h-full w-full object-cover object-center"
+                        draggable="false"
+                        loading="eager"
+                        disableBlur={true}
+                    />
+                </div>
+            </div>
+        </div>
+
+        <div class="flex items-center text-center justify-center">
+            <p class="text-sm text-neutral-600 dark:text-neutral-400">
+                © <span id="current-year">{year}</span>
+                {SITE.title}
+            </p>
+        </div>
+    </div>
+</footer>
