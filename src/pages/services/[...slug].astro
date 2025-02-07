@@ -1,9 +1,7 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
 import BaseLayout from "@layouts/BaseLayout.astro";
-import BlogComments from "@components/blog/BlogComments";
 import Image from "@components/ui/images/Image.astro";
-import { Settings } from "../../config";
 import { SITE } from "@/config";
 
 export async function getStaticPaths() {
@@ -14,10 +12,8 @@ export async function getStaticPaths() {
     }));
 }
 
-type Props = CollectionEntry<"posts">;
-
 const post = Astro.props;
-const { Content, remarkPluginFrontmatter } = await post.render();
+const { Content } = await post.render();
 
 const category: CollectionEntry<"categories"> = (
     await getCollection("categories")
@@ -73,55 +69,43 @@ const ogImage = post.data.ogImage;
             >
                 <div class="mb-10">
                     <h2
-                        class="block text-balance text-3xl font-bold tracking-tight text-center mx-auto text-neutral-800 dark:text-neutral-300 md:text-4xl lg:text-5xl"
+                        class="block text-balance text-3xl font-bold tracking-tight text-center mx-auto text-[#274e86] dark:text-neutral-300 md:text-4xl lg:text-5xl"
                     >
                         {post.data.title}
                     </h2>
                 </div>
 
+                <div class="flex items-center justify-center mb-10">
+                    <p
+                        class="text-center text-xl text-neutral-700 dark:text-neutral-300"
+                    >
+                        {post.data.description}
+                    </p>
+                </div>
+
                 <article
                     class="prose prose-blog sm:prose-lg dark:prose-invert max-w-none"
                 >
-                    <Content />
-                </article>
-
-                <div
-                    class="mt-10 md:mt-14 mx-auto grid max-w-screen-lg gap-y-5 sm:flex sm:items-center sm:justify-between sm:gap-y-0"
-                >
                     <div
-                        class="flex flex-wrap gap-x-2 gap-y-1 sm:flex-nowrap sm:items-center sm:gap-y-0"
+                        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
                     >
-                        {
-                            tags.map((tag: string) => (
-                                <span class="inline-flex items-center gap-x-1.5 rounded-lg bg-neutral-400/30 px-3 py-1.5 text-xs font-medium text-neutral-700 outline-none focus:outline-none focus-visible:outline-none focus-visible:ring dark:bg-neutral-700/60 dark:text-neutral-300">
-                                    {tag}
-                                </span>
-                            ))
-                        }
+                        <Content />
                     </div>
-                    <!--<div class="flex items-center justify-end gap-x-1.5">-->
-                    <!--    <Bookmark />-->
-                    <!--    <div class="mx-3 block h-4 border-e border-neutral-400 dark:border-neutral-500"></div>-->
-                    <!--    <div class="inline-flex">-->
-                    <!--        <SocialShare pageTitle={post.data.title} />-->
-                    <!--    </div>-->
-                    <!--</div>-->
-                </div>
+                </article>
             </div>
         </div>
-        {
-            Settings.Comment.enable && (
-                <div class="my-10">
-                    <BlogComments client:only="react" />
-                </div>
-            )
-        }
     </section>
     <style is:inline>
         html.dark .astro-code,
         html.dark .astro-code span {
             color: var(--shiki-dark) !important;
             background-color: var(--shiki-dark-bg) !important;
+        }
+        .prose img {
+            margin: 0 !important;
+        }
+        .prose p {
+            margin: 0;
         }
     </style>
 </BaseLayout>

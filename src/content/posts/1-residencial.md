@@ -8,10 +8,6 @@ banner2: "@images/services/residencial/residencial1.jpg"
 tags: ["plomeria"]
 ---
 
-Instalación, reparación y mantenimiento de tuberías de agua, desagües, grifos, sanitarios, calentadores y sistemas de alcantarillado en hogares.
-
-## Imágenes
-
 ![Baños](@images/services/residencial/residencial1.jpg)
 
 ![Cocinas](@images/services/residencial/residencial2.jpg)

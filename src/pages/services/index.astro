@@ -2,9 +2,7 @@
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import BaseLayout from "@layouts/BaseLayout.astro";
-import BlogRecentCard from "@components/blog/BlogRecentCard.astro";
 import BlogSelectedArticle from "@components/blog/BlogSelectedArticle.astro";
-import MainSection from "@components/ui/sections/MainSection.astro";
 import { SITE } from "@/config";
 
 const posts: CollectionEntry<"posts">[] = (await getCollection("posts")).sort(
@@ -14,7 +12,7 @@ const posts: CollectionEntry<"posts">[] = (await getCollection("posts")).sort(
 
 const selectedPosts: CollectionEntry<"posts">[] = posts.slice(0, 7);
 const description =
-    "Here are some articles that Godruoyi believes are not bad, hope you enjoy them.";
+    "Conoce más sobre nuestros servicios de fontanería, instalaciones eléctricas y más.";
 const URL = Astro.url.href;
 ---
 
@@ -37,14 +35,5 @@ const URL = Astro.url.href;
         },
     }}
 >
-    <MainSection
-        title="Servicios"
-        subTitle="Brindamos servicios de plomería personalizados para garantizar el mejor funcionamiento de tus instalaciones."
-        btnExists={true}
-        btnTitle="Contáctanos"
-        btnURL="/contact"
-    />
-
-    <BlogRecentCard blogs={posts} />
     <BlogSelectedArticle posts={selectedPosts} />
 </BaseLayout>

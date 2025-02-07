@@ -8,12 +8,6 @@ banner2: "@images/services/emergencia/emergencia1.jpg"
 tags: ["Reparaciones"]
 ---
 
-Atención urgente a fugas de agua o gas, tuberías rotas, drenajes obstruidos y problemas críticos en el suministro de agua.
-
-Para cualquier emergencia contáctanos a nuestro WhatsApp.
-
-## Imágenes
-
 ![Cañerias](@images/services/emergencia/emergencia1.jpg)
 
 ![Fugas](@images/services/emergencia/emergencia2.jpg)

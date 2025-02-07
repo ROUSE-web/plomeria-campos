@@ -4,8 +4,6 @@ import type { CollectionEntry } from "astro:content";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import BlogInsight from "@components/blog/BlogInsight.astro";
 import HeroSection from "@components/ui/sections/HeroSection.astro";
-import FeaturesSection from "@components/ui/sections/FeaturesSection.astro";
-import HeroSectionAlt from "@components/ui/sections/HeroSectionAlt.astro";
 import blogHeroImg from "@images/home.webp";
 
 const posts: CollectionEntry<"posts">[] = (await getCollection("posts"))
@@ -19,21 +17,19 @@ const posts: CollectionEntry<"posts">[] = (await getCollection("posts"))
 <BaseLayout>
     <HeroSection
         title=`Plomería <span class="text-[#274e86] dark:text-[#80cce2]">Campos</span>`
-        subTitle="Realizamos todo tipo de trabajos de fontanería e instalaciones eléctricas."
-        primaryBtn="Nuestros servicios"
-        primaryBtnURL="/services"
+        subTitle="Somos una empresa de servicios dedicada en fontaneria e hidrosanitaria, instalacion de redes de agua, alcantarillado, bombas de agua,desagues pluviales,contraincendios, entre otros en todo el territorio boliviano."
+        primaryBtn="Cotizar servicio"
+        primaryBtnURL="https://wa.me/59178300509/?text=Hola%20Plomería%20Campos%2C%20me%20gustaría%20cotizar%20un%20servicio"
         src={blogHeroImg}
         alt="Plomería Campos"
     />
-
-    <FeaturesSection />
 
     <section
         class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
     >
         <div class="mx-auto mb-10 max-w-2xl text-center lg:mb-14">
             <h2
-                class="text-3xl font-bold text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
+                class="text-3xl font-bold text-[#274e86] dark:text-neutral-200 md:text-4xl md:leading-tight"
             >
                 Nuestros servicios
             </h2>
@@ -46,10 +42,4 @@ const posts: CollectionEntry<"posts">[] = (await getCollection("posts"))
             {posts.map((b) => <BlogInsight blog={b} />)}
         </div>
     </section>
-
-    <HeroSectionAlt
-        title="Contáctanos por WhatsApp"
-        subTitle="Escribenos para cualquier consulta"
-        url="https://wa.me/59178300509/?text=Hola%2C%20me%20gustaría%20saber%20más%20sobre%20sus%20servicios"
-    />
 </BaseLayout>

@@ -8,10 +8,6 @@ banner2: "@images/services/sanitaria/sanitaria1.jpg"
 tags: ["plomeria"]
 ---
 
-Instalación y mantenimiento de sistemas de alcantarillado, aguas negras y grises, así como desagües pluviales y trampas de grasa.
-
-## Imágenes
-
 ![Piscina](@images/services/sanitaria/sanitaria1.jpg)
 
 ![Cañerias](@images/services/sanitaria/sanitaria2.jpg)

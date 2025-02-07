@@ -8,10 +8,6 @@ banner2: "@images/services/gas/gas1.jpg"
 tags: ["gas"]
 ---
 
-Instalación, reparación y mantenimiento de tuberías y sistemas de gas en hogares, comercios e industrias para garantizar un suministro seguro.
-
-## Imágenes
-
 ![Piscina](@images/services/gas/gas1.jpg)
 
 ![Cañerias](@images/services/gas/gas2.jpg)

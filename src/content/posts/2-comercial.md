@@ -9,10 +9,6 @@ ogImage: "@images/services/comercial/comercial2.jpg"
 tags: ["plomeria"]
 ---
 
-Servicios especializados para edificios comerciales, oficinas, hoteles y restaurantes, que incluyen sistemas de agua a gran escala, drenajes industriales y sistemas contra incendios.
-
-## Imágenes
-
 ![Piscina](@images/services/comercial/comercial1.jpg)
 
 ![Cañerias](@images/services/comercial/comercial2.jpg)

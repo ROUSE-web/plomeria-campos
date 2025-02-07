@@ -8,10 +8,6 @@ ogImage: "@images/services/electricas/electricas1.jpg"
 tags: ["eléctrica"]
 ---
 
-Servicios de instalación, reparación y mantenimiento de sistemas eléctricos en viviendas, comercios e industrias, incluyendo cableado, tableros eléctricos, iluminación y sistemas de protección contra sobrecargas y cortocircuitos.
-
-## Imágenes
-
 ![Piscina](@images/services/electricas/electricas1.jpg)
 
 ![Cañerias](@images/services/electricas/electricas2.jpg)

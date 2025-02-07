@@ -12,10 +12,10 @@ export const SITE: Site = {
 
 export const NavigationLinks: NavigationLink[] = [
     { name: "INICIO", url: "/" },
+    { name: "NOSOTROS", url: "/services/about" },
     { name: "SERVICIOS", url: "/services" },
-    { name: "SOBRE NOSOTROS", url: "/services/about" },
     { name: "PROYECTOS", url: "/projects" },
-    { name: "CONTÁCTANOS", url: "/contact" },
+    { name: "CONTACTO", url: "/contact" },
 ];
 
 export const FooterLinks = [

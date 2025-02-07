@@ -8,10 +8,6 @@ banner2: "@images/services/industrial/industrial1.jpg"
 tags: ["plomeria"]
 ---
 
-Instalación y mantenimiento de sistemas de tuberías en fábricas, plantas de producción y otras instalaciones industriales con requerimientos específicos de agua, gas y desechos.
-
-## Imágenes
-
 ![Baños](@images/services/industrial/industrial1.jpg)
 
 ![Cocinas](@images/services/industrial/industrial2.jpg)

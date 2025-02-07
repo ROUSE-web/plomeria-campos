@@ -33,6 +33,8 @@
     "@astrojs/rss": "^4.0.10",
     "@astrojs/sitemap": "^3.2.1",
     "@astrojs/tailwind": "^5.1.3",
+    "@fancyapps/fancybox": "^3.5.7",
+    "@fancyapps/ui": "^5.0.36",
     "@giscus/react": "^3.0.0",
     "@opendal/lib-darwin-arm64": "^0.47.7",
     "@playform/compress": "^0.0.4",
