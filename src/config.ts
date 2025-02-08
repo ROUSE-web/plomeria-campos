@@ -12,7 +12,7 @@ export const SITE: Site = {
 
 export const NavigationLinks: NavigationLink[] = [
     { name: "INICIO", url: "/" },
-    { name: "NOSOTROS", url: "/services/about" },
+    { name: "NOSOTROS", url: "/about" },
     { name: "SERVICIOS", url: "/services" },
     { name: "PROYECTOS", url: "/projects" },
     { name: "CONTACTO", url: "/contact" },
@@ -33,7 +33,7 @@ export const FooterLinks = [
         links: [
             { name: "RSS", url: "/rss.xml" },
             { name: "Site Map", url: "/sitemap-index.xml" },
-            { name: "Twitter", url: "https://x.com/godruoyi" },
+            { name: "Twitter", url: "https://x.com/" },
         ],
     },
 ];

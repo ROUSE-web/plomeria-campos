@@ -1,0 +1,200 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import logo from "@images/nosotros.jpg";
+---
+
+<BaseLayout title="Nosotros" description="Sobre Nosotros">
+    <!-- una descripcion sobre la empresa -->
+    <section class="mx-auto max-w-6xl px-4 pb-12 pt-8 sm:px-6 lg:px-8 lg:pt-12">
+        <div class="shadow-none sm:shadow-sm mt-4 sm:mt-0">
+            <div class="max-w-6xl">
+                <!-- imagen de nosotros -->
+                <Image
+                    class="w-full object-cover rounded-tl-sm rounded-tr-sm"
+                    src={logo}
+                    alt="Nosotros"
+                    draggable="false"
+                    format="avif"
+                    loading="lazy"
+                    inferSize={true}
+                />
+            </div>
+            <div
+                class="sm:dark:bg-neutral-900/30 px-0 sm:px-6 md:px-10 lg:px-14 py-6"
+            >
+                <div class="mb-5 mt-5">
+                    <h2
+                        class="block text-balance text-2xl font-bold tracking-tight text-center mx-auto text-[#274e86] dark:text-neutral-300 md:text-3xl lg:text-4xl"
+                    >
+                        Sobre Plomeria Campos
+                    </h2>
+                </div>
+                <!-- una descripcion sobre la empresa -->
+                <div class="flex items-center justify-center mb-10">
+                    <p
+                        class="text-center text-xl text-neutral-700 dark:text-neutral-300"
+                    >
+                        Nace en el año 2009 en la ciudad de Cochabamba, primero
+                        trabajando en instalaciones de gas natural domiciliaria.
+                        Realizando el trabajo en una pequeña vivienda el
+                        propietario pregunto si podría realizar en pequeño
+                        trabajo de instalación de tubos sanitarios indicándome
+                        de cómo debía realizar el trabajo, desde ese momento me
+                        llamo la curiosidad pude profundizarme más sobre
+                        plomería y desde la fecha comencé a realizar ambos
+                        trabajos instalación de Gas y Plomería. Ya en el 2012
+                        con más conocimiento me dedique a trabajar en este
+                        perfecto oficio. Hoy en día PLOMERÍA CAMPOS es una
+                        empresa dedicada al trabajo con personal capacitado.
+                    </p>
+                </div>
+                <!-- 3 cuadros en columnas sobre mision, vision y valores -->
+                <div
+                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
+                >
+                    <div
+                        class="bg-white dark:bg-neutral-800 p-6 rounded-lg shadow-xl"
+                    >
+                        <div class="flex justify-center mb-4">
+                            <svg
+                                class="size-32 text-[#274e86] dark:text-[#80cce2]"
+                                aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke="currentColor"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="m10.051 8.102-3.778.322-1.994 1.994a.94.94 0 0 0 .533 1.6l2.698.316m8.39 1.617-.322 3.78-1.994 1.994a.94.94 0 0 1-1.595-.533l-.4-2.652m8.166-11.174a1.366 1.366 0 0 0-1.12-1.12c-1.616-.279-4.906-.623-6.38.853-1.671 1.672-5.211 8.015-6.31 10.023a.932.932 0 0 0 .162 1.111l.828.835.833.832a.932.932 0 0 0 1.111.163c2.008-1.102 8.35-4.642 10.021-6.312 1.475-1.478 1.133-4.77.855-6.385Zm-2.961 3.722a1.88 1.88 0 1 1-3.76 0 1.88 1.88 0 0 1 3.76 0Z"
+                                ></path>
+                            </svg>
+                        </div>
+                        <h3
+                            class="text-lg font-bold text-center text-[#274e86] dark:text-[#80cce2]"
+                        >
+                            Misión
+                        </h3>
+                        <p class="mt-2 text-neutral-700 dark:text-neutral-300">
+                            Nos dedicamos a proporcionar servicios integrales de
+                            fontanería e hidrosanitaria, redes de agua,
+                            alcantarillado y obras civiles en todo el territorio
+                            boliviano. Nos comprometemos a brindar servicios de
+                            alta calidad que superen las expectativas de
+                            nuestros clientes, asegurando la eficiencia y
+                            durabilidad en cada proyecto.
+                        </p>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-neutral-800 p-6 rounded-lg shadow-xl"
+                    >
+                        <div class="flex justify-center mb-4">
+                            <svg
+                                class="size-32 text-[#274e86] dark:text-[#80cce2]"
+                                aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    d="M21 12c0 1.2-4.03 6-9 6s-9-4.8-9-6c0-1.2 4.03-6 9-6s9 4.8 9 6Z"
+                                ></path>
+                                <path
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                                ></path>
+                            </svg>
+                        </div>
+                        <h3
+                            class="text-lg font-bold text-center text-[#274e86] dark:text-[#80cce2]"
+                        >
+                            Visión
+                        </h3>
+                        <p class="mt-2 text-neutral-700 dark:text-neutral-300">
+                            Ser reconocidos como líderes en el sector de la
+                            fontanería e hidrosanitaria en Bolivia, destacando
+                            por nuestra excelencia en servicios, innovación
+                            constante y compromiso inquebrantable con la
+                            calidad. Buscamos ser la primera opción para
+                            nuestros clientes al ofrecer soluciones integrales y
+                            ser un referente en obras civiles, contribuyendo al
+                            desarrollo sostenible del país.
+                        </p>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-neutral-800 p-6 rounded-lg shadow-xl"
+                    >
+                        <div class="flex justify-center mb-4">
+                            <svg
+                                class="size-32 text-[#274e86] dark:text-[#80cce2]"
+                                aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    d="M11.083 5.104c.35-.8 1.485-.8 1.834 0l1.752 4.022a1 1 0 0 0 .84.597l4.463.342c.9.069 1.255 1.2.556 1.771l-3.33 2.723a1 1 0 0 0-.337 1.016l1.03 4.119c.214.858-.71 1.552-1.474 1.106l-3.913-2.281a1 1 0 0 0-1.008 0L7.583 20.8c-.764.446-1.688-.248-1.474-1.106l1.03-4.119A1 1 0 0 0 6.8 14.56l-3.33-2.723c-.698-.571-.342-1.702.557-1.771l4.462-.342a1 1 0 0 0 .84-.597l1.753-4.022Z"
+                                ></path>
+                            </svg>
+                        </div>
+                        <h3
+                            class="text-lg font-bold text-center text-[#274e86] dark:text-[#80cce2]"
+                        >
+                            Valores
+                        </h3>
+
+                        <p
+                            class="mt-2 px-5 text-neutral-700 dark:text-neutral-300"
+                        >
+                            ☑️ Disciplina
+                        </p>
+                        <p
+                            class="mt-2 px-5 text-neutral-700 dark:text-neutral-300"
+                        >
+                            ☑️ Pro actividad
+                        </p>
+                        <p
+                            class="mt-2 px-5 text-neutral-700 dark:text-neutral-300"
+                        >
+                            ☑️ Responsabilidad
+                        </p>
+                        <p
+                            class="mt-2 px-5 text-neutral-700 dark:text-neutral-300"
+                        >
+                            ☑️ Buena atención al cliente
+                        </p>
+                        <p
+                            class="mt-2 px-5 text-neutral-700 dark:text-neutral-300"
+                        >
+                            ☑️ Cumplimiento
+                        </p>
+                        <p
+                            class="mt-2 px-5 text-neutral-700 dark:text-neutral-300"
+                        >
+                            ☑️ Seriedad
+                        </p>
+                        <p
+                            class="mt-2 px-5 text-neutral-700 dark:text-neutral-300"
+                        >
+                            ☑️ Garantía
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section></BaseLayout
+>
