@@ -4,7 +4,6 @@ import type { CollectionEntry } from "astro:content";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import BlogInsight from "@components/blog/BlogInsight.astro";
 import HeroSection from "@components/ui/sections/HeroSection.astro";
-import blogHeroImg from "@images/home.webp";
 
 const posts: CollectionEntry<"posts">[] = (await getCollection("posts"))
     .sort(
@@ -20,8 +19,6 @@ const posts: CollectionEntry<"posts">[] = (await getCollection("posts"))
         subTitle="Somos una empresa de servicios dedicada en fontaneria e hidrosanitaria, instalacion de redes de agua, alcantarillado, bombas de agua, desagues pluviales, contraincendios, entre otros en todo el territorio boliviano."
         primaryBtn="Cotizar servicio"
         primaryBtnURL="https://wa.me/59178300509/?text=Hola%20Plomería%20Campos%2C%20me%20gustaría%20cotizar%20un%20servicio"
-        src={blogHeroImg}
-        alt="Plomería Campos"
     />
 
     <section
@@ -29,11 +26,11 @@ const posts: CollectionEntry<"posts">[] = (await getCollection("posts"))
     >
         <div class="mx-auto mb-10 max-w-2xl text-center lg:mb-14">
             <h2
-                class="text-3xl font-bold text-[#274e86] dark:text-neutral-200 md:text-4xl md:leading-tight"
+                class="text-2xl font-bold text-[#274e86] dark:text-neutral-200 md:text-4xl md:leading-tight"
             >
-                Nuestros servicios
+                NUESTROS SERVICIOS
             </h2>
-            <p class="mt-1 text-pretty text-neutral-600 dark:text-neutral-400">
+            <p class="mt-1 text-pretty text-neutral-600 dark:text-neutral-300">
                 Conoce más sobre nuestros servicios de fontanería, instalaciones
                 eléctricas y más.
             </p>
