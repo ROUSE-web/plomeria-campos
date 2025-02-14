@@ -1,6 +1,8 @@
 ---
 import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
 import SecondaryCTA from "@components/ui/buttons/SecondaryCTA.astro";
+import { Image } from "astro:assets";
+import portada from "@images/portada.jpg";
 
 const {
     title,
@@ -23,9 +25,16 @@ interface Props {
 }
 ---
 
+<!-- Hero Section -->
+<div class="absolute h-4/6 inset-0 z-[-1] opacity-50">
+    <Image
+        class="object-cover object-center h-full"
+        src={portada}
+        alt="Portada"
+    />
+</div>
 <section
-    class="mx-auto grid max-w-[85rem] gap-4 px-4 py-14 sm:px-6 md:grid-cols-2 md:items-center md:gap-8 lg:px-8 2xl:max-w-full"
-    style="background-image: url('/src/images/portada.jpg');"
+    class="mx-auto h-[40rem] grid max-w-[85rem] gap-4 px-4 py-14 sm:px-6 md:grid-cols-2 md:items-center md:gap-8 lg:px-8 2xl:max-w-full"
 >
     <div>
         <h1
