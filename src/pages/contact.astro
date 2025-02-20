@@ -1,6 +1,8 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { SITE } from "@/config";
+import { Image } from "astro:assets";
+import contacto from "@images/contact.png";
 
 const description = `Contáctanos para más información sobre nuestros servicios.`;
 const URL = Astro.url.href;
@@ -39,7 +41,7 @@ const URL = Astro.url.href;
                 servicios. ¡No dudes en contactarnos!
             </p>
         </div>
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             <!-- Información de contacto -->
             <div class="bg-white dark:bg-[#0a1422] p-6 rounded-lg shadow-lg">
                 <h3
@@ -144,69 +146,21 @@ const URL = Astro.url.href;
                     </div>
                 </div>
             </div>
-            <!-- Formulario de contacto
-            <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg shadow-lg">
-                <form
-                    name="contact"
-                    method="POST"
-                    data-netlify="true"
-                    data-netlify-honeypot="bot-field"
-                >
-                    <input type="hidden" name="form-name" value="contact" />
-                    <div class="grid gap-4">
-                        <div class="grid gap-2">
-                            <label
-                                for="name"
-                                class="text-pretty text-neutral-600 dark:text-neutral-400"
-                                >Nombre</label
-                            >
-                            <input
-                                type="text"
-                                name="name"
-                                id="name"
-                                class="w-full p-3 text-pretty text-neutral-800 dark:text-neutral-200 bg-neutral-100 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-md focus:ring-[#274e86] dark:focus:ring-[#80cce2] focus:border-[#274e86] dark:focus:border-[#80cce2]"
-                                required
-                            />
-                        </div>
-                        <div class="grid gap-2">
-                            <label
-                                for="email"
-                                class="text-pretty text-neutral-600 dark:text-neutral-400"
-                                >Correo Electrónico</label
-                            >
-                            <input
-                                type="email"
-                                name="email"
-                                id="email"
-                                class="w-full p-3 text-pretty text-neutral-800 dark:text-neutral-200 bg-neutral-100 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-md focus:ring-[#274e86] dark:focus:ring-[#80cce2] focus:border-[#274e86] dark:focus:border-[#80cce2]"
-                                required
-                            />
-                        </div>
-                        <div class="grid gap-2">
-                            <label
-                                for="message"
-                                class="text-pretty text-neutral-600 dark:text-neutral-400"
-                                >Mensaje</label
-                            >
-                            <textarea
-                                name="message"
-                                id="message"
-                                rows="4"
-                                class="w-full p-3 text-pretty text-neutral-800 dark:text-neutral-200 bg-neutral-100 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-md focus:ring-[#274e86] dark:focus:ring-[#80cce2] focus:border-[#274e86] dark:focus:border-[#80cce2]"
-                                required></textarea>
-                        </div>
-                        <div>
-                            <button
-                                type="submit"
-                                class="w-full px-4 py-3 text-sm font-bold text-neutral-50 bg-[#274e86] rounded-md hover:bg-[#426495] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#274e86] dark:focus:ring-[#80cce2]"
-                            >
-                                Enviar mensaje
-                            </button>
-                        </div>
-                    </div>
-                </form>
+
+            <div class="hidden md:block">
+                <!-- imagen -->
+                <div class="relative flex justify-center">
+                    <Image
+                        class="size-96 object-cover rounded-tl-sm rounded-tr-sm"
+                        src={contacto}
+                        alt="contacto"
+                        draggable="false"
+                        format="avif"
+                        loading="lazy"
+                        inferSize={true}
+                    />
+                </div>
             </div>
---->
         </div>
     </section>
 </BaseLayout>

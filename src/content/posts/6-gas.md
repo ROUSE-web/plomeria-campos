@@ -1,5 +1,5 @@
 ---
-title: "Plomería de gas"
+title: "Instalaciones de gas"
 description: "Instalación, reparación y mantenimiento de tuberías y sistemas de gas en hogares, comercios e industrias para garantizar un suministro seguro."
 pubDate: "2024-07-05 16:16:00"
 category: "gas"

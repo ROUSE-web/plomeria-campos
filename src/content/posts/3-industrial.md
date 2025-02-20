@@ -19,5 +19,3 @@ tags: ["plomeria"]
 ![Cocinas](@images/services/industrial/industrial5.jpg)
 
 ![Baños](@images/services/industrial/industrial6.jpg)
-
-![Cañeria](@images/services/industrial/industrial7.jpg)

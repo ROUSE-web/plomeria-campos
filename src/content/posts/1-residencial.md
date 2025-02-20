@@ -19,5 +19,3 @@ tags: ["plomeria"]
 ![Cocinas](@images/services/residencial/residencial5.jpg)
 
 ![Baños](@images/services/residencial/residencial6.jpg)
-
-![Cañeria](@images/services/residencial/residencial7.jpeg)
