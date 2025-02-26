@@ -8,14 +8,14 @@ banner2: "@images/services/sanitaria/sanitaria1.jpg"
 tags: ["plomeria"]
 ---
 
-![Piscina](@images/services/sanitaria/sanitaria1.jpg)
+![Sanitaria](@images/services/sanitaria/sanitaria1.jpg)
 
-![Cañerias](@images/services/sanitaria/sanitaria2.jpg)
+![Sanitaria](@images/services/sanitaria/sanitaria2.jpg)
 
-![Baños](@images/services/sanitaria/sanitaria3.jpg)
+![Sanitaria](@images/services/sanitaria/sanitaria3.jpg)
 
-![Cañerias](@images/services/sanitaria/sanitaria4.jpg)
+![Sanitaria](@images/services/sanitaria/sanitaria4.jpg)
 
-![Baños](@images/services/sanitaria/sanitaria5.jpg)
+![Sanitaria](@images/services/sanitaria/sanitaria5.jpg)
 
-![Manguera](@images/services/sanitaria/sanitaria6.jpg)
+![Sanitaria](@images/services/sanitaria/sanitaria6.jpg)

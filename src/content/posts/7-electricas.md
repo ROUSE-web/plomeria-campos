@@ -8,12 +8,14 @@ ogImage: "@images/services/electricas/electricas1.jpg"
 tags: ["eléctrica"]
 ---
 
-![Piscina](@images/services/electricas/electricas1.jpg)
+![Eléctrica](@images/services/electricas/electricas1.jpg)
 
-![Cañerias](@images/services/electricas/electricas2.jpg)
+![Eléctrica](@images/services/electricas/electricas2.jpg)
 
-![Baños](@images/services/electricas/electricas3.jpg)
+![Eléctrica](@images/services/electricas/electricas3.jpg)
 
-![Cañerias](@images/services/electricas/electricas4.jpg)
+![Eléctrica](@images/services/electricas/electricas4.jpg)
 
-![Baños](@images/services/electricas/electricas5.jpg)
+![Eléctrica](@images/services/electricas/electricas5.jpg)
+
+![Eléctrica](@images/services/electricas/electricas6.jpg)

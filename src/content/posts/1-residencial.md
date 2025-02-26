@@ -8,14 +8,20 @@ banner2: "@images/services/residencial/residencial1.jpg"
 tags: ["plomeria"]
 ---
 
-![Baños](@images/services/residencial/residencial1.jpg)
+![Residencial](@images/services/residencial/residencial1.jpg)
 
-![Cocinas](@images/services/residencial/residencial2.jpg)
+![Residencial](@images/services/residencial/residencial2.jpg)
 
-![Bombas de agua](@images/services/residencial/residencial3.jpg)
+![Residencial](@images/services/residencial/residencial3.jpg)
 
-![Bombas de agua](@images/services/residencial/residencial4.jpg)
+![Residencial](@images/services/residencial/residencial4.jpg)
 
-![Cocinas](@images/services/residencial/residencial5.jpg)
+![Residencial](@images/services/residencial/residencial5.jpg)
 
-![Baños](@images/services/residencial/residencial6.jpg)
+![Residencial](@images/services/residencial/residencial6.jpg)
+
+![Residencial](@images/services/residencial/residencial7.jpg)
+
+![Residencial](@images/services/residencial/residencial8.jpg)
+
+![Residencial](@images/services/residencial/residencial9.jpg)

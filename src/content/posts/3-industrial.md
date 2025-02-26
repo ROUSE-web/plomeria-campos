@@ -8,14 +8,20 @@ banner2: "@images/services/industrial/industrial1.jpg"
 tags: ["plomeria"]
 ---
 
-![Baños](@images/services/industrial/industrial1.jpg)
+![Industrial](@images/services/industrial/industrial1.jpg)
 
-![Cocinas](@images/services/industrial/industrial2.jpg)
+![Industrial](@images/services/industrial/industrial2.jpg)
 
-![Bombas de agua](@images/services/industrial/industrial3.jpg)
+![Industrial](@images/services/industrial/industrial3.jpg)
 
-![Bombas de agua](@images/services/industrial/industrial4.jpg)
+![Industrial](@images/services/industrial/industrial4.jpg)
 
-![Cocinas](@images/services/industrial/industrial5.jpg)
+![Industrial](@images/services/industrial/industrial5.jpg)
 
-![Baños](@images/services/industrial/industrial6.jpg)
+![Industrial](@images/services/industrial/industrial6.jpg)
+
+![Industrial](@images/services/industrial/industrial7.jpg)
+
+![Industrial](@images/services/industrial/industrial8.jpg)
+
+![Industrial](@images/services/industrial/industrial9.jpg)

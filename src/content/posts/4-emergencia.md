@@ -8,12 +8,14 @@ banner2: "@images/services/emergencia/emergencia1.jpg"
 tags: ["Reparaciones"]
 ---
 
-![Cañerias](@images/services/emergencia/emergencia1.jpg)
+![Emergencia](@images/services/emergencia/emergencia1.jpg)
 
-![Fugas](@images/services/emergencia/emergencia2.jpg)
+![Emergencia](@images/services/emergencia/emergencia2.jpg)
 
-![Fugas](@images/services/emergencia/emergencia3.jpg)
+![Emergencia](@images/services/emergencia/emergencia3.jpg)
 
-![Reparacion](@images/services/emergencia/emergencia4.jpg)
+![Emergencia](@images/services/emergencia/emergencia4.jpg)
 
-![Repuestos](@images/services/emergencia/emergencia5.jpg)
+![Emergencia](@images/services/emergencia/emergencia5.jpg)
+
+![Emergencia](@images/services/emergencia/emergencia6.jpg)
