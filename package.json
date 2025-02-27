@@ -37,7 +37,7 @@
     "@fancyapps/ui": "^5.0.36",
     "@giscus/react": "^3.0.0",
     "@opendal/lib-darwin-arm64": "^0.47.7",
-    "@playform/compress": "^0.0.4",
+    "@playform/compress": "^0.1.7",
     "@types/react": "^18.3.2",
     "@types/unist": "^3.0.2",
     "astro": "^5.0.3",

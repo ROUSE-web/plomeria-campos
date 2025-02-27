@@ -18,26 +18,6 @@ export const NavigationLinks: NavigationLink[] = [
     { name: "CONTACTO", url: "/contact" },
 ];
 
-export const FooterLinks = [
-    {
-        section: "Blog",
-        links: [
-            { name: "Posts", url: "/services" },
-            { name: "Timeline", url: "/timeline" },
-            { name: "Categories", url: "/categories" },
-            { name: "About Me", url: "/services/about-godruoyi" },
-        ],
-    },
-    {
-        section: "Other",
-        links: [
-            { name: "RSS", url: "/rss.xml" },
-            { name: "Site Map", url: "/sitemap-index.xml" },
-            { name: "Twitter", url: "https://x.com/" },
-        ],
-    },
-];
-
 export const Settings = {
     GoogleAnalytics: {
         enable: false,
