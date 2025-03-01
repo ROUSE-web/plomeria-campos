@@ -145,6 +145,22 @@ export const Icons = {
         strokeLinejoin: "round",
         stroke: "currentColor",
     },
+    arrowLeft: {
+        paths: [
+            {
+                d: "m15 18-6-6 6-6",
+            },
+        ],
+        class: "h-4 w-4 flex-shrink-0 transition duration-300 group-hover:-translate-x-1",
+        width: 24,
+        height: 24,
+        viewBox: "0 0 24 24",
+        fill: "none",
+        strokeWidth: "2",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        stroke: "currentColor",
+    },
     facebook: {
         paths: [
             {
