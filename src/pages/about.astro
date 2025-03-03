@@ -8,11 +8,11 @@ import grupo from "@images/grupo.jpg";
 <BaseLayout title="Nosotros" description="Sobre Nosotros">
     <!-- una descripcion sobre la empresa -->
     <section class="mx-auto max-w-6xl px-4 pb-12 pt-8 sm:px-6 lg:px-8 lg:pt-12">
-        <div class="shadow-none sm:shadow-sm mt-4 sm:mt-0">
+        <div class="mt-4 sm:mt-0">
             <div class="max-w-6xl">
                 <!-- imagen de nosotros -->
                 <Image
-                    class="w-full object-cover rounded-tl-sm rounded-tr-sm"
+                    class="w-[400px] h-[400px] md:w-[600px] md:h-[600px] m-auto object-cover rounded-full"
                     src={logo}
                     alt="Nosotros"
                     draggable="false"
@@ -20,8 +20,13 @@ import grupo from "@images/grupo.jpg";
                     loading="lazy"
                     inferSize={true}
                 />
+                <h2
+                    class="block text-balance text-lg font-bold text-center mx-auto text-[#274e86] dark:text-neutral-300 md:text-xl lg:text-2xl"
+                >
+                    OSCAR CAMPOS
+                </h2>
                 <Image
-                    class="w-full object-cover rounded-bl-sm rounded-br-sm mt-5"
+                    class="w-full object-cover rounded-3xl mt-10"
                     src={grupo}
                     alt="Grupo"
                     draggable="false"
@@ -29,6 +34,11 @@ import grupo from "@images/grupo.jpg";
                     loading="lazy"
                     inferSize={true}
                 />
+                <h2
+                    class="block text-balance text-lg font-bold text-center mx-auto text-[#274e86] dark:text-neutral-300 md:text-xl lg:text-2xl"
+                >
+                    EQUIPO DE TRABAJO
+                </h2>
             </div>
             <div class="px-0 sm:px-6 md:px-10 lg:px-14 py-6">
                 <div class="mb-5 mt-5">
