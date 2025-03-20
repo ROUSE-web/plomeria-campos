@@ -10,7 +10,7 @@ const posts: CollectionEntry<"posts">[] = (await getCollection("posts"))
         (a: CollectionEntry<"posts">, b: CollectionEntry<"posts">) =>
             b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
     )
-    .slice(0, 7);
+    .slice(0, 8);
 ---
 
 <BaseLayout>

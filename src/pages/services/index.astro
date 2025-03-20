@@ -10,7 +10,7 @@ const posts: CollectionEntry<"posts">[] = (await getCollection("posts")).sort(
         b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 
-const selectedPosts: CollectionEntry<"posts">[] = posts.slice(0, 7);
+const selectedPosts: CollectionEntry<"posts">[] = posts.slice(0, 8);
 const description =
     "Conoce más sobre nuestros servicios de fontanería, instalaciones eléctricas y más.";
 const URL = Astro.url.href;

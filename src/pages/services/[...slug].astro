@@ -106,8 +106,10 @@ const nextPost = posts[currentIndex + 1];
                                         class="h-4 w-4 flex-shrink-0 transition duration-300 group-hover:-translate-x-1"
                                     />
                                     <p class=" hidden sm:block">
-                                        PLOMERIA
-                                        {prevPost.slug.slice(2).toUpperCase()}
+                                        {prevPost.slug
+                                            .slice(2)
+                                            .toUpperCase()
+                                            .replaceAll("-", " ")}
                                     </p>
                                 </div>
                             </a>
@@ -122,8 +124,10 @@ const nextPost = posts[currentIndex + 1];
                             >
                                 <div class="flex items-center gap-x-2">
                                     <p class=" hidden sm:block">
-                                        PLOMERIA
-                                        {nextPost.slug.slice(2).toUpperCase()}
+                                        {nextPost.slug
+                                            .slice(2)
+                                            .toUpperCase()
+                                            .replaceAll("-", " ")}
                                     </p>
                                     <Icon
                                         name="arrowRight"
@@ -145,6 +149,7 @@ const nextPost = posts[currentIndex + 1];
         }
         .prose img {
             margin: 0 !important;
+            border-radius: 0.75rem;
         }
         .prose p {
             margin: 0;
