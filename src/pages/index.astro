@@ -2,41 +2,270 @@
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import BaseLayout from "@layouts/BaseLayout.astro";
-import BlogInsight from "@components/blog/BlogInsight.astro";
 import HeroSection from "@components/ui/sections/HeroSection.astro";
+import Image from "@components/ui/images/Image.astro";
 
 const posts: CollectionEntry<"posts">[] = (await getCollection("posts"))
     .sort(
         (a: CollectionEntry<"posts">, b: CollectionEntry<"posts">) =>
             b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
     )
-    .slice(0, 8);
+    .slice(0, 6);
 ---
 
-<BaseLayout>
+<BaseLayout 
+    title="Inicio" 
+    description="Empresa l&iacute;der en ingeniería hidrosanitaria y plomer&iacute;a en Bolivia. Soluciones t&eacute;cnicas confiables para hogar e industria."
+>
     <HeroSection
-        title=`Plomería <span class="text-[#274e86] dark:text-[#80cce2]">Campos</span>`
-        subTitle="Somos una empresa de servicios dedicada en fontaneria e hidrosanitaria, instalacion de redes de agua, alcantarillado, bombas de agua, desagues pluviales, contraincendios, entre otros en todo el territorio boliviano."
+        title=`Plomería <span class="text-primary dark:text-secondary">Campos</span>`
+        subTitle="Expertos en ingenier&iacute;a hidrosanitaria y plomer&iacute;a t&eacute;cnica. Soluciones integrales de agua, alcantarillado y sistemas contraincendios con cobertura en toda Bolivia."
         primaryBtn="Cotizar servicio"
         primaryBtnURL="https://wa.me/59178300509/?text=Hola%20Plomería%20Campos%2C%20me%20gustaría%20cotizar%20un%20servicio"
     />
 
-    <section
-        class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
-    >
-        <div class="mx-auto mb-10 max-w-2xl text-center lg:mb-14">
-            <h2
-                class="text-2xl font-bold text-[#274e86] dark:text-neutral-200 md:text-4xl md:leading-tight"
-            >
-                NUESTROS SERVICIOS
-            </h2>
-            <p class="mt-1 text-pretty text-neutral-600 dark:text-neutral-300">
-                Conoce más sobre nuestros servicios de fontanería, instalaciones
-                eléctricas y más.
-            </p>
+    <!-- Pain Points Section -->
+    <section class="py-20 bg-neutral-50 dark:bg-[#050a11]/50 border-y border-neutral-200 dark:border-neutral-800">
+        <div class="mx-auto max-w-[85rem] px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-secondary uppercase tracking-[0.4em] mb-4">&iquest;Algo no va bien?</h2>
+                <h3 class="text-3xl md:text-5xl font-bold text-primary dark:text-neutral-100 uppercase tracking-tighter leading-tight mb-6">
+                    Solucionamos los <span class="text-secondary">problemas</span> que le quitan el sue&ntilde;o
+                </h3>
+                <p class="text-lg text-neutral-600 dark:text-neutral-400">
+                    &iquest;Se le rompi&oacute; una tuber&iacute;a? &iquest;Tiene una emergencia a media noche? No se preocupe, nosotros lo solucionamos r&aacute;pido y con garant&iacute;a.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+                {[
+                    { t: "Fugas de Agua", d: "Detecci&oacute;n y reparaci&oacute;n inmediata de filtraciones.", i: "M12 21c-4.418 0-8-3.582-8-8 0-4.418 8-13 8-13s8 8.582 8 13c0 4.418-3.582 8-8 8z" },
+                    { t: "Tuber&iacute;as Tapadas", d: "Desobstrucci&oacute;n profunda con equipo especializado.", i: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" },
+                    { t: "Baja Presi&oacute;n", d: "Optimizaci&oacute;n de flujo y mantenimiento de bombas.", i: "M13 10V3L4 14h7v7l9-11h-7z" },
+                    { t: "Instalaciones", d: "Correcci&oacute;n de trabajos defectuosos o antiguos.", i: "M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" },
+                    { t: "Emergencias 24/7", d: "Atenci&oacute;n t&eacute;cnica urgente en cualquier momento.", i: "M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" }
+                ].map((item) => (
+                    <div class="group bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 p-8 rounded-3xl transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                        <div class="mb-5 flex size-12 items-center justify-center rounded-2xl bg-primary/10 text-primary dark:bg-secondary/10 dark:text-secondary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                            <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d={item.i} />
+                            </svg>
+                        </div>
+                        <h4 class="text-lg font-bold text-primary dark:text-neutral-100 mb-3 leading-tight uppercase tracking-tighter" set:html={item.t}></h4>
+                        <p class="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed" set:html={item.d}></p>
+                    </div>
+                ))}
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="https://wa.me/59178300509" class="inline-flex items-center gap-x-2 text-secondary font-bold uppercase tracking-widest text-xs hover:text-primary transition-colors">
+                    <span>Atenci&oacute;n Inmediata por WhatsApp</span>
+                    <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                    </svg>
+                </a>
+            </div>
         </div>
-        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {posts.map((b) => <BlogInsight blog={b} />)}
+    </section>
+
+    <!-- Nuestros Servicios Section -->
+    <section class="mx-auto max-w-[85rem] px-4 py-24 sm:px-6 lg:px-8">
+        <div class="max-w-2xl mx-auto text-center mb-16">
+            <h2 class="text-xs font-bold text-secondary uppercase tracking-[0.4em] mb-4">Experiencia Garantizada</h2>
+            <h3 class="text-4xl md:text-5xl font-bold text-primary dark:text-neutral-100 uppercase tracking-tight leading-none mb-6">Nuestros Servicios</h3>
+            <p class="text-lg text-neutral-500 dark:text-neutral-400">Soluciones técnicas confiables y profesionales para su hogar o empresa.</p>
+            <div class="mt-8 h-1 w-24 bg-secondary mx-auto rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            {
+                posts.map((post, idx) => (
+                    <a
+                        href={`/services/${post.slug}/`}
+                        class="group relative flex flex-col bg-white dark:bg-neutral-900/40 rounded-[2.5rem] border border-neutral-200 dark:border-neutral-800 overflow-hidden transition-all duration-500 hover:shadow-[0_30px_60px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_30px_60px_rgba(0,0,0,0.5)] hover:-translate-y-2"
+                    >
+                        <!-- Image Container -->
+                        <div class="relative h-64 w-full overflow-hidden">
+                            <Image
+                                src={post.data.banner}
+                                alt={post.data.title}
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:brightness-75"
+                                draggable="false"
+                                format="avif"
+                            />
+                            <div class="absolute inset-0 bg-primary/40 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center p-8">
+                                <span class="px-6 py-3 border-2 border-white text-white font-bold text-xs uppercase tracking-[0.3em] rounded-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                                    Ver Detalles
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Content -->
+                        <div class="p-8 flex flex-col flex-grow relative overflow-hidden">
+                            <!-- Background Number Watermark -->
+                            <div class="absolute -right-4 -bottom-6 text-9xl font-black text-neutral-50 dark:text-neutral-800/20 group-hover:text-primary/5 transition-colors pointer-events-none select-none">
+                                0{idx + 1}
+                            </div>
+
+                            <div class="relative z-10">
+                                <h3 class="text-2xl font-bold text-primary dark:text-neutral-100 uppercase tracking-tighter mb-4 leading-tight group-hover:text-secondary transition-colors">
+                                    {post.data.title}
+                                </h3>
+                                <p class="text-neutral-500 dark:text-neutral-400 text-sm leading-relaxed line-clamp-3">
+                                    {post.data.description}
+                                </p>
+
+                                <div class="mt-4 flex items-center gap-x-2 text-[10px] font-bold text-secondary uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                    <span>Explorar Servicio</span>
+                                    <svg class="size-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                ))
+            }
+        </div>
+
+        <div class="mt-20 text-center">
+            <a
+                href="/services"
+                class="group inline-flex items-center gap-x-3 px-8 py-4 bg-white dark:bg-neutral-900 border-2 border-primary dark:border-secondary text-primary dark:text-secondary font-bold uppercase tracking-[0.2em] text-xs rounded-full transition-all duration-500 hover:bg-primary hover:text-white dark:hover:bg-secondary dark:hover:text-primary hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-1"
+            >
+                Ver todos los servicios
+                <svg
+                    class="size-4 transition-transform duration-500 group-hover:translate-x-2"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                >
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-24 bg-neutral-50 dark:bg-[#050a11]/50 border-y border-neutral-200 dark:border-neutral-800">
+        <div class="mx-auto max-w-[85rem] px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-secondary uppercase tracking-[0.4em] mb-4">Confianza que Construye</h2>
+                <h3 class="text-4xl md:text-5xl font-bold text-primary dark:text-neutral-100 uppercase tracking-tighter leading-none mb-6">
+                    Lo que dicen nuestros <span class="text-secondary">clientes</span>
+                </h3>
+                <p class="text-lg text-neutral-600 dark:text-neutral-400">
+                    La satisfacci&oacute;n de quienes conf&iacute;an en nosotros es nuestro mejor respaldo y garant&iacute;a de calidad.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {[
+                    { n: "Mar&iacute;a G.", r: "Residente", t: "Excelente servicio, llegaron r&aacute;pido y solucionaron una fuga que otros no pudieron. Muy profesionales y limpios al trabajar.", s: 5 },
+                    { n: "Ing. Roberto S.", r: "Constructor", t: "Muy profesionales en la instalaci&oacute;n de gas de nuestro edificio. Cumplieron con todos los plazos y normas de seguridad exigidas.", s: 5 },
+                    { n: "Carlos P.", r: "Propietario", t: "Atenci&oacute;n 24/7 real. Me salvaron de una inundaci&oacute;n un domingo a las 3 AM. El trato fue impecable y el precio justo.", s: 5 }
+                ].map((testimonial) => (
+                    <div class="group relative bg-white dark:bg-neutral-900 p-10 rounded-[2.5rem] border border-neutral-200 dark:border-neutral-800 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5 hover:-translate-y-2">
+                        <!-- Quote Icon -->
+                        <div class="absolute top-8 right-10 text-neutral-100 dark:text-neutral-800 group-hover:text-secondary/20 transition-colors duration-500">
+                            <svg class="size-12 fill-current" viewBox="0 0 24 24">
+                                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.883z" />
+                            </svg>
+                        </div>
+                        
+                        <!-- Stars -->
+                        <div class="flex gap-x-1 mb-6">
+                            {[...Array(testimonial.s)].map(() => (
+                                <svg class="size-4 text-secondary fill-current" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                            ))}
+                        </div>
+
+                        <p class="text-neutral-600 dark:text-neutral-300 italic mb-8 relative z-10 leading-relaxed">
+                            &quot;{testimonial.t}&quot;
+                        </p>
+
+                        <div class="flex items-center gap-x-4 border-t border-neutral-100 dark:border-neutral-800 pt-6">
+                            <div class="size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary dark:text-secondary font-black text-sm uppercase">
+                                {testimonial.n.charAt(0)}
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-primary dark:text-neutral-100 leading-none mb-1">{testimonial.n}</h4>
+                                <p class="text-xs text-neutral-500 uppercase tracking-widest">{testimonial.r}</p>
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="py-20 px-4">
+        <div class="mx-auto max-w-[85rem]">
+            <div class="relative bg-primary dark:bg-neutral-900 rounded-[3rem] p-12 md:p-20 overflow-hidden shadow-2xl shadow-primary/30">
+                <!-- Background Decorative Elements -->
+                <div class="absolute top-0 right-0 w-96 h-96 bg-secondary/20 rounded-full blur-[100px] -mr-48 -mt-48"></div>
+                <div class="absolute bottom-0 left-0 w-96 h-96 bg-secondary/10 rounded-full blur-[100px] -ml-48 -mb-48"></div>
+                
+                <div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-xs font-bold text-secondary uppercase tracking-[0.4em] mb-6">¿Listo para comenzar?</h2>
+                        <h3 class="text-4xl md:text-6xl font-bold text-white uppercase tracking-tighter leading-none mb-8">
+                            Transformamos sus <span class="text-secondary">problemas</span> en soluciones t&eacute;cnicas
+                        </h3>
+                        <p class="text-xl text-neutral-300 leading-relaxed mb-10">
+                            Ya sea una emergencia inmediata o un gran proyecto de ingenier&iacute;a, nuestro equipo est&aacute; listo para actuar. Obtenga asesor&iacute;a profesional hoy mismo.
+                        </p>
+                        
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a
+                                href="https://wa.me/59178300509"
+                                class="group inline-flex items-center justify-center gap-x-3 px-10 py-5 bg-white text-primary font-bold uppercase tracking-widest text-sm rounded-2xl transition-all duration-300 hover:bg-secondary hover:text-white hover:scale-105 active:scale-95 shadow-xl shadow-black/20"
+                            >
+                                Solicitar Asesor&iacute;a Ahora
+                                <svg class="size-5 transition-transform duration-300 group-hover:translate-x-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                                </svg>
+                            </a>
+                            <a
+                                href="/contact"
+                                class="inline-flex items-center justify-center gap-x-3 px-10 py-5 border-2 border-white/30 text-white font-bold uppercase tracking-widest text-sm rounded-2xl transition-all duration-300 hover:bg-white/10 hover:border-white active:scale-95"
+                            >
+                                Cont&aacute;ctanos
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="hidden lg:block relative">
+                        <div class="bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-[2rem] shadow-2xl rotate-3">
+                            <div class="flex items-center gap-x-4 mb-6">
+                                <div class="size-12 rounded-full bg-secondary flex items-center justify-center">
+                                    <svg class="size-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </div>
+                                <h4 class="text-white font-bold uppercase tracking-widest">Respuesta en menos de 30 min</h4>
+                            </div>
+                            <p class="text-neutral-300 text-sm leading-relaxed mb-6">
+                                Nuestro equipo t&eacute;cnico en Cochabamba est&aacute; estratégicamente distribuido para garantizar la atenci&oacute;n m&aacute;s r&aacute;pida de la ciudad.
+                            </p>
+                            <div class="flex -space-x-4">
+                                {[1,2,3,4].map((i) => (
+                                    <div class={`size-10 rounded-full border-2 border-primary bg-neutral-200 flex items-center justify-center text-[10px] font-bold text-primary`}>
+                                        T{i}
+                                    </div>
+                                ))}
+                                <div class="px-4 py-2 text-[10px] font-bold text-white uppercase tracking-widest flex items-center">
+                                    +10 T&eacute;cnicos Activos
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 </BaseLayout>

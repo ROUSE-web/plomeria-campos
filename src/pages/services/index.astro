@@ -2,7 +2,7 @@
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import BaseLayout from "@layouts/BaseLayout.astro";
-import BlogSelectedArticle from "@components/blog/BlogSelectedArticle.astro";
+import Image from "@components/ui/images/Image.astro";
 import { SITE } from "@/config";
 
 const posts: CollectionEntry<"posts">[] = (await getCollection("posts")).sort(
@@ -15,7 +15,6 @@ const description =
     "Conoce más sobre nuestros servicios de fontanería, instalaciones eléctricas y más.";
 const URL = Astro.url.href;
 ---
-
 <BaseLayout
     title="Servicios"
     description={description}
@@ -25,7 +24,7 @@ const URL = Astro.url.href;
         inLanguage: "es-BO",
         "@id": URL,
         url: URL,
-        name: `All Blogs - ${SITE.title}`,
+        name: `Servicios - ${SITE.title}`,
         description: description,
         isPartOf: {
             "@type": "WebSite",
@@ -35,5 +34,96 @@ const URL = Astro.url.href;
         },
     }}
 >
-    <BlogSelectedArticle posts={selectedPosts} />
+    <!-- Hero Section -->
+    <section class="">
+        <div class="mx-auto max-w-screen-2xl px-4 py-5 sm:px-6 lg:px-8 lg:py-12">
+            <div class="text-center max-w-5xl mx-auto">
+                <h2 class="text-xs font-bold text-secondary uppercase tracking-[0.4em] mb-3">Experiencia T&eacute;cnica Garantizada</h2>
+                <h1 class="text-4xl md:text-5xl font-bold text-primary dark:text-neutral-100 uppercase tracking-tight leading-none mb-6">
+                    Nuestros <span class="text-secondary">Servicios</span>
+                </h1>
+                <p class="text-lg md:text-xl text-neutral-600 dark:text-neutral-300 leading-relaxed max-w-4xl mx-auto">
+                    Ofrecemos soluciones integrales en plomer&iacute;a, gas y obras civiles, combinando tecnolog&iacute;a de vanguardia con a&ntilde;os de experiencia en el sector.
+                </p>
+                <div class="mt-8 h-1 w-24 bg-primary mx-auto rounded-full"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="mx-auto max-w-[85rem] px-4 py-12 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12">
+            {
+                posts.map((post, idx) => (
+                    <a
+                        href={`/services/${post.slug}/`}
+                        class="group relative flex flex-col bg-white dark:bg-neutral-900/40 rounded-[2.5rem] border border-neutral-200 dark:border-neutral-800 overflow-hidden transition-all duration-500 hover:shadow-[0_30px_60px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_30px_60px_rgba(0,0,0,0.5)] hover:-translate-y-2"
+                    >
+                        <!-- Image Container -->
+                        <div class="relative h-72 w-full overflow-hidden">
+                            <Image
+                                src={post.data.banner}
+                                alt={post.data.title}
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:brightness-75"
+                                draggable="false"
+                                format="avif"
+                            />
+                            <div class="absolute inset-0 bg-primary/40 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center p-8">
+                                <span class="px-6 py-3 border-2 border-white text-white font-bold text-xs uppercase tracking-[0.3em] rounded-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                                    Ver Detalles
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Content -->
+                        <div class="p-7 flex flex-col flex-grow relative overflow-hidden">
+                            <!-- Background Number Watermark -->
+                            <div class="absolute -right-4 -bottom-6 text-9xl font-black text-neutral-50 dark:text-neutral-800/20 group-hover:text-primary/5 transition-colors pointer-events-none select-none">
+                                0{idx + 1}
+                            </div>
+
+                            <div class="relative z-10">
+                                <h3 class="text-2xl font-bold text-primary dark:text-neutral-100 uppercase tracking-tighter mb-4 leading-tight group-hover:text-secondary transition-colors">
+                                    {post.data.title}
+                                </h3>
+                                <p class="text-neutral-500 dark:text-neutral-400 text-sm leading-relaxed line-clamp-3">
+                                    {post.data.description}
+                                </p>
+                                
+                                <div class="mt-4 flex items-center gap-x-2 text-[10px] font-bold text-secondary uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                    <span>Explorar Servicio</span>
+                                    <svg class="size-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                ))
+            }
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="mx-auto max-w-[85rem] px-4 pb-24 sm:px-6 lg:px-8">
+        <div class="relative rounded-[3rem] overflow-hidden bg-neutral-100 dark:bg-[#050a11] border border-neutral-200 dark:border-neutral-800 shadow-2xl transition-colors duration-300">
+            <div class="absolute inset-0 bg-gradient-to-br from-primary/5 dark:from-primary/20 to-transparent"></div>
+            <div class="relative z-10 px-8 py-16 md:py-24 text-center max-w-3xl mx-auto">
+                <h2 class="text-3xl md:text-5xl font-bold text-primary dark:text-white uppercase tracking-tighter mb-8 leading-tight">
+                    &iquest;No encuentra el servicio <span class="text-secondary">espec&iacute;fico</span> que busca?
+                </h2>
+                <p class="text-neutral-600 dark:text-white/80 text-lg mb-10 leading-relaxed">
+                    Nuestro equipo t&eacute;cnico realiza trabajos personalizados seg&uacute;n las necesidades de su infraestructura. Cont&aacute;ctenos hoy mismo para una asesor&iacute;a t&eacute;cnica.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a
+                        href="/contact"
+                        class="w-full sm:w-auto px-10 py-5 bg-primary hover:bg-secondary text-white font-bold rounded-full uppercase tracking-widest text-sm transition-all duration-300 transform hover:scale-105 shadow-xl shadow-primary/20"
+                    >
+                        Solicitar Asesor&iacute;a
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 </BaseLayout>

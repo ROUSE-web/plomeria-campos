@@ -69,6 +69,12 @@ export default {
             },
         },
         extend: {
+            colors: {
+                primary: "#274e86",
+                secondary: "#80cce2",
+                tertiary: "#ceddef",
+                background: "#eef0f4",
+            },
             typography: ({ theme }) => ({
                 blog: {
                     css: {

@@ -26,43 +26,62 @@ interface Props {
 ---
 
 <!-- Hero Section -->
-<div
-    class="flex justify-center absolute h-[35rem] inset-0 z-[-1] opacity-50 md:h-[40rem]"
->
-    <Image
-        class="object-cover object-center h-full"
-        src={portada}
-        alt="Portada"
-    />
-</div>
-<section
-    class="mx-auto h-[35rem] grid max-w-[85rem] gap-4 px-4 py-14 sm:px-6 md:grid-cols-2 md:items-center md:gap-8 lg:px-8 2xl:max-w-full md:h-[40rem]"
->
-    <div>
-        <h1
-            class="block text-balance text-3xl tracking-tight font-bold text-neutral-800 dark:text-neutral-200 sm:text-4xl lg:text-6xl lg:leading-tight"
-        >
-            <Fragment set:html={title} />
-        </h1>
-        {
-            subTitle && (
-                <p class="mt-6 text-pretty text-lg leading-relaxed text-neutral-700 dark:text-neutral-300 lg:w-4/5">
-                    {subTitle}
-                </p>
-            )
-        }
+<section class="relative overflow-hidden">
+    <!-- Background Image with Overlay -->
+    <div class="absolute inset-0 z-[-1]">
+        <Image
+            class="object-cover object-center w-full h-[35rem] md:h-[45rem]"
+            src={portada}
+            alt="Portada Plomería Campos"
+        />
+        <div class="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/20 dark:from-[#0f1d32] dark:via-[#0f1d32]/90 dark:to-transparent"></div>
+    </div>
 
-        <div class="mt-7 grid w-full gap-3 sm:inline-flex">
+    <div class="mx-auto max-w-[85rem] px-4 py-20 sm:px-6 md:py-32 lg:px-8 2xl:max-w-full min-h-[35rem] md:min-h-[45rem] flex items-center">
+        <div class="max-w-3xl">
+            <h1
+                class="block text-balance text-4xl font-bold tracking-tight text-primary dark:text-neutral-100 sm:text-6xl lg:text-7xl lg:leading-[1.1]"
+            >
+                <Fragment set:html={title} />
+            </h1>
             {
-                primaryBtn && (
-                    <PrimaryCTA title={primaryBtn} url={primaryBtnURL} />
+                subTitle && (
+                    <p class="mt-8 text-pretty text-lg md:text-xl leading-relaxed text-neutral-700 dark:text-neutral-300 max-w-2xl">
+                        {subTitle}
+                    </p>
                 )
             }
-            {
-                secondaryBtn && (
-                    <SecondaryCTA title={secondaryBtn} url={secondaryBtnURL} />
-                )
-            }
+
+            <div class="mt-10 flex flex-wrap gap-4">
+                {
+                    primaryBtn && (
+                        <PrimaryCTA title={primaryBtn} url={primaryBtnURL} />
+                    )
+                }
+                {
+                    secondaryBtn && (
+                        <SecondaryCTA title={secondaryBtn} url={secondaryBtnURL} />
+                    )
+                }
+            </div>
+
+            <!-- Trust Badges / Stats (Premium Touch) -->
+            <div class="mt-8 sm:mt-12 flex flex-col sm:flex-row items-start sm:items-center gap-y-4 sm:gap-y-0 sm:gap-x-8 opacity-70">
+                <div class="flex flex-col">
+                    <span class="text-xl sm:text-2xl font-bold text-primary dark:text-secondary">10+</span>
+                    <span class="text-[10px] sm:text-xs uppercase tracking-widest font-semibold dark:text-white">Años de Experiencia</span>
+                </div>
+                <div class="hidden sm:block h-8 w-[1px] bg-neutral-300 dark:bg-neutral-700"></div>
+                <div class="flex flex-col">
+                    <span class="text-xl sm:text-2xl font-bold text-primary dark:text-secondary">100%</span>
+                    <span class="text-[10px] sm:text-xs uppercase tracking-widest font-semibold dark:text-white">Garantía Técnica</span>
+                </div>
+                <div class="hidden sm:block h-8 w-[1px] bg-neutral-300 dark:bg-neutral-700"></div>
+                <div class="flex flex-col">
+                    <span class="text-xl sm:text-2xl font-bold text-primary dark:text-secondary">Bolivia</span>
+                    <span class="text-[10px] sm:text-xs uppercase tracking-widest font-semibold dark:text-white">Cobertura Nacional</span>
+                </div>
+            </div>
         </div>
     </div>
 </section>

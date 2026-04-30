@@ -4,30 +4,102 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 
 <BaseLayout title="Proyectos" description="Algunos proyectos realizados">
     <!-- incrustrar un video de youtube -->
-    <div
-        class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
-    >
-        <div class="mx-auto mb-10 max-w-2xl text-center lg:mb-14">
-            <h2
-                class="text-2xl font-bold text-[#274e86] dark:text-neutral-200 md:text-3xl lg:text-4xl md:leading-tight"
-            >
-                NUESTROS PROYECTOS
-            </h2>
-            <p class="mt-1 text-pretty text-neutral-600 dark:text-neutral-300">
-                Algunos de los proyectos que realizamos
-            </p>
+    <!-- Hero Section -->
+    <section class="">
+        <div class="mx-auto max-w-[85rem] px-4 py-5 sm:px-6 lg:px-8 lg:py-12">
+            <div class="text-center max-w-3xl mx-auto">
+                <h2 class="text-xs font-bold text-secondary uppercase tracking-[0.4em] mb-3">Nuestra Experiencia en Movimiento</h2>
+                <h1 class="text-4xl md:text-5xl font-bold text-primary dark:text-neutral-100 uppercase tracking-tight leading-none mb-6">
+                    Proyectos <span class="text-secondary">Destacados</span>
+                </h1>
+                <p class="text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed max-w-2xl mx-auto">
+                    Explore a través de estos registros visuales la calidad técnica y el compromiso que ponemos en cada obra hidrosanitaria y civil.
+                </p>
+                <div class="mt-8 h-1 w-24 bg-primary mx-auto rounded-full"></div>
+            </div>
         </div>
-        <div
-            class="relative overflow-hidden mx-auto"
-            style="padding-top: 56.25%; max-width: 1024px;"
-        >
-            <iframe
-                class="absolute top-0 left-0 w-full h-full"
-                src="https://www.youtube.com/embed/C1fWiKV9EZs?si=Bp7Cw8VArZsP0v1h"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
+    </section>
+
+    <!-- Project Gallery -->
+    <section class="mx-auto max-w-[85rem] px-4 py-12 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+            {[ 
+                { 
+                    title: "Instalación Hidrosanitaria Industrial", 
+                    category: "Ingeniería", 
+                    desc: "Implementación de sistemas de alta presión para complejo industrial en Cochabamba.",
+                    video: "C1fWiKV9EZs?si=Bp7Cw8VArZsP0v1h"
+                },
+                { 
+                    title: "Red de Gas Natural Domiciliario", 
+                    category: "Gas Natural", 
+                    desc: "Proyecto de expansión de red interna para edificio residencial multifamiliar.",
+                    video: "C1fWiKV9EZs?si=Bp7Cw8VArZsP0v1h" // Usando el mismo como ejemplo
+                }
+            ].map((project, idx) => (
+                <div class="group relative flex flex-col space-y-6">
+                    <!-- Video Container -->
+                    <div class="relative aspect-video w-full overflow-hidden rounded-[2.5rem] shadow-2xl bg-neutral-200 dark:bg-neutral-800 border border-neutral-200/50 dark:border-neutral-700/50 transition-all duration-500 group-hover:shadow-primary/20 group-hover:-translate-y-2">
+                        <iframe
+                            class="absolute top-0 left-0 w-full h-full"
+                            src={`https://www.youtube.com/embed/${project.video}`}
+                            title={project.title}
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+
+                    <!-- Project Info -->
+                    <div class="px-4">
+                        <div class="flex items-center gap-x-3 mb-3">
+                            <span class="px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-secondary border border-secondary/30 rounded-full">
+                                {project.category}
+                            </span>
+                            <span class="text-xs text-neutral-400">PROYECTO 0{idx + 1}</span>
+                        </div>
+                        <h3 class="text-2xl md:text-3xl font-bold text-primary dark:text-neutral-100 uppercase tracking-tighter mb-4 group-hover:text-secondary transition-colors">
+                            {project.title}
+                        </h3>
+                        <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed max-w-lg">
+                            {project.desc}
+                        </p>
+                        
+                        <div class="mt-8 flex items-center gap-x-6">
+                            <div class="flex flex-col">
+                                <span class="text-xl font-bold text-primary dark:text-neutral-200">100%</span>
+                                <span class="text-[10px] uppercase font-bold text-neutral-500">Ejecución</span>
+                            </div>
+                            <div class="h-8 w-[1px] bg-neutral-200 dark:bg-neutral-800"></div>
+                            <div class="flex flex-col">
+                                <span class="text-xl font-bold text-primary dark:text-neutral-200">Garantía</span>
+                                <span class="text-[10px] uppercase font-bold text-neutral-500">Total</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            ))}
         </div>
-    </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="mx-auto max-w-[85rem] px-4 pb-24 sm:px-6 lg:px-8">
+        <div class="bg-primary p-12 md:p-20 rounded-[3rem] text-center relative overflow-hidden shadow-2xl">
+            <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-secondary/20 to-transparent opacity-50"></div>
+            <div class="relative z-10 max-w-2xl mx-auto">
+                <h2 class="text-3xl md:text-5xl font-bold text-white uppercase tracking-tighter mb-8 leading-tight">
+                    ¿Tiene un proyecto en mente?
+                </h2>
+                <p class="text-white/80 text-lg mb-10">
+                    Nuestra experiencia técnica está a su disposición para garantizar soluciones hidrosanitarias de primer nivel.
+                </p>
+                <a 
+                    href="/contact" 
+                    class="inline-flex items-center justify-center px-10 py-5 text-sm font-bold text-primary uppercase tracking-widest bg-white rounded-full hover:bg-secondary hover:text-white transition-all duration-300 transform hover:scale-105"
+                >
+                    Iniciar Presupuesto
+                </a>
+            </div>
+        </div>
+    </section>
 </BaseLayout>

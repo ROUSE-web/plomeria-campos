@@ -72,7 +72,7 @@ export const Settings = {
                 import.meta.env.S3_ACCESS_KEY) as string,
             secretAccessKey: (process.env.S3_SECRET_ACCESS_KEY ??
                 import.meta.env.S3_SECRET_ACCESS_KEY) as string,
-            root: "gblog",
+            root: "plomeriacampos",
         },
     },
 };
