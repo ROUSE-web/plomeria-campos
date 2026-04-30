@@ -4,6 +4,7 @@ import Footer from "@components/Footer.astro";
 import Header from "@components/Header.astro";
 import GoogleAnalytics from "@components/support/GoogleAnalytics.astro";
 import UmamiAnalytics from "@components/support/UmamiAnalytics.astro";
+import Analytics from '@vercel/analytics/astro'
 import { SITE } from "@/config";
 import WhatsappFloat from "@/components/ui/buttons/WhatsappFloat.astro";
 
@@ -58,6 +59,7 @@ const normalizeTitle = !title ? SITE.title : `${title} | ${SITE.title}`;
         </script>
         <GoogleAnalytics />
         <UmamiAnalytics />
+        <Analytics />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link

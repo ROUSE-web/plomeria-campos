@@ -40,6 +40,7 @@
     "@playform/compress": "^0.1.7",
     "@types/react": "^18.3.2",
     "@types/unist": "^3.0.2",
+    "@vercel/analytics": "^2.0.1",
     "astro": "^5.0.3",
     "astro-compressor": "^0.4.1",
     "mdast-util-to-string": "^4.0.0",
