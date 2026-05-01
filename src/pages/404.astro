@@ -1,31 +1,58 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
 import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
+import { Image } from "astro:assets";
+import errorImage from "@images/404.webp";
 
-const pageTitle: string = `Página no encontrada`;
-
-const title: string = "Página no encontrada";
-const subTitle: string =
-    "Hicimos todo lo posible pero aún no pudimos encontrar lo que buscabas.";
-const description: string = "Hicimos todo lo posible pero aún no pudimos encontrar lo que buscabas.";
+const pageTitle: string = `404 - Página no encontrada`;
+const description: string = "Parece que nos hemos desviado un poco. Esta tubería no lleva a ninguna parte... ¡pero nuestro equipo puede arreglar cualquier otra fuga!";
 ---
 
 <BaseLayout title={pageTitle} description={description}>
-    <section class="grid h-svh place-content-center">
-        <div class="mx-auto max-w-screen-xl px-4 py-8 lg:px-6 lg:py-16">
-            <div class="mx-auto max-w-screen-sm text-center">
-                <h1
-                    class="text-dark mb-4 text-7xl font-extrabold text-[#274e86] dark:text-[#80cce2] lg:text-9xl"
-                >
-                    {title}
+    <section class="relative flex min-h-[70vh] items-center justify-center overflow-hidden py-10 lg:py-20">
+        <!-- Background Decorative Elements -->
+        <div class="absolute -left-20 -top-20 h-64 w-64 rounded-full bg-blue-500/10 blur-3xl"></div>
+        <div class="absolute -right-20 -bottom-20 h-96 w-96 rounded-full bg-teal-500/10 blur-3xl"></div>
+        
+        <div class="relative z-10 mx-auto max-w-4xl px-4 text-center">
+            <div class="mb-8 transform transition-all duration-700 hover:scale-[1.02]">
+                <Image 
+                    src={errorImage} 
+                    alt="Error 404 - Plomería Campos" 
+                    class="mx-auto h-auto w-full max-w-2xl rounded-3xl shadow-2xl shadow-blue-500/10"
+                    loading="eager"
+                />
+            </div>
+
+            <div class="backdrop-blur-md bg-white/30 dark:bg-slate-900/40 border border-white/20 dark:border-white/10 rounded-3xl p-8 md:p-12 shadow-xl">
+                <h1 class="mb-4 text-4xl font-black tracking-tight text-[#274e86] dark:text-[#80cce2] md:text-5xl lg:text-6xl">
+                    ¡Oops! Fuga detectada
                 </h1>
-                <p
-                    class="mb-4 text-balance text-3xl font-bold text-neutral-700 dark:text-neutral-300 md:text-4xl"
-                >
-                    {subTitle}
+                <p class="mx-auto mb-8 max-w-2xl text-lg font-medium text-neutral-600 dark:text-neutral-300 md:text-xl">
+                    {description}
                 </p>
-                <PrimaryCTA title="Inicio" url="/" />
+                <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
+                    <PrimaryCTA title="Volver al Inicio" url="/" />
+                    <a 
+                        href="/contact" 
+                        class="inline-flex items-center justify-center rounded-xl border-2 border-[#274e86] px-6 py-3 text-center text-base font-bold text-[#274e86] transition-all hover:bg-[#274e86] hover:text-white dark:border-[#80cce2] dark:text-[#80cce2] dark:hover:bg-[#80cce2] dark:hover:text-[#0f1d32]"
+                    >
+                        Reportar Problema
+                    </a>
+                </div>
             </div>
         </div>
     </section>
+
+    <style>
+        /* Animación suave para el contenedor principal */
+        section {
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 </BaseLayout>
