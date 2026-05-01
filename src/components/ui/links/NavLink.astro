@@ -11,30 +11,42 @@ interface Props {
     id={url === "/" ? "home" : url.replace("/", "")}
     href={url}
     data-astro-prefetch
-    class="rounded-lg text-base font-medium text-neutral-600 outline-none ring-zinc-500 hover:text-primary transition-colors duration-300 focus-visible:ring dark:text-neutral-200 dark:ring-zinc-200 dark:hover:text-secondary dark:focus:outline-none md:py-3 md:text-sm xl:text-base"
+    class="relative group rounded-lg text-base font-medium text-neutral-600 outline-none hover:text-primary transition-all duration-300 dark:text-neutral-300 dark:hover:text-secondary md:py-3 md:text-sm xl:text-base"
 >
     {name}
+    <!-- Active Indicator Line -->
+    <span class="absolute bottom-1 left-0 w-0 h-0.5 bg-primary dark:bg-secondary transition-all duration-300 group-hover:w-full nav-indicator"></span>
 </a>
 
 <script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const url = window.location.pathname.replace("//", "");
+    const setActiveLink = () => {
+        const path = window.location.pathname;
         let navId = "home";
 
-        if (url !== "/") {
-            navId = url.replace("/", "");
+        if (path !== "/") {
+            // Remove trailing slash and leading slash for ID comparison
+            navId = path.replace(/\/$/, "").replace(/^\//, "");
         }
 
         const nav = document.getElementById(navId);
         if (nav) {
-            nav.classList.remove(
-                "text-neutral-600",
-                "dark:text-neutral-200",
-                "hover:text-primary",
-                "dark:hover:text-secondary"
-            );
+            // Clean classes
+            nav.classList.remove("text-neutral-600", "dark:text-neutral-300");
+            // Add active styles
             nav.classList.add("text-primary", "dark:text-secondary", "font-bold");
             nav.setAttribute("aria-current", "page");
+            
+            // Show indicator
+            const indicator = nav.querySelector('.nav-indicator');
+            if (indicator) {
+                indicator.classList.remove('w-0');
+                indicator.classList.add('w-full');
+            }
         }
-    });
+    };
+
+    // Run on initial load
+    document.addEventListener("DOMContentLoaded", setActiveLink);
+    // Support Astro transitions if used
+    document.addEventListener("astro:after-swap", setActiveLink);
 </script>

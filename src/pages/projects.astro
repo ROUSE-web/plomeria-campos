@@ -5,17 +5,36 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 <BaseLayout title="Proyectos" description="Algunos proyectos realizados">
     <!-- incrustrar un video de youtube -->
     <!-- Hero Section -->
-    <section class="">
-        <div class="mx-auto max-w-[85rem] px-4 py-5 sm:px-6 lg:px-8 lg:py-12">
-            <div class="text-center max-w-3xl mx-auto">
-                <h2 class="text-xs font-bold text-secondary uppercase tracking-[0.4em] mb-3">Nuestra Experiencia en Movimiento</h2>
-                <h1 class="text-4xl md:text-5xl font-bold text-primary dark:text-neutral-100 uppercase tracking-tight leading-none mb-6">
-                    Proyectos <span class="text-secondary">Destacados</span>
-                </h1>
-                <p class="text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed max-w-2xl mx-auto">
-                    Explore a través de estos registros visuales la calidad técnica y el compromiso que ponemos en cada obra hidrosanitaria y civil.
-                </p>
-                <div class="mt-8 h-1 w-24 bg-primary mx-auto rounded-full"></div>
+    <section class="relative overflow-hidden">
+        <!-- Background texture -->
+        <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 dark:from-primary/10 dark:to-secondary/10 pointer-events-none"></div>
+
+        <div class="mx-auto max-w-[85rem] px-4 pt-8 pb-8 sm:px-6 lg:px-8 lg:pt-12">
+            <!-- Label -->
+            <div class="flex justify-center mb-6">
+                <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-secondary/30 bg-secondary/10 text-secondary text-xs font-bold uppercase tracking-[0.25em]">
+                    <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18a8 8 0 110-16 8 8 0 010 16zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
+                    </svg>
+                    Nuestra Experiencia en Movimiento
+                </span>
+            </div>
+
+            <!-- Headline -->
+            <h1 class="text-center text-4xl md:text-5xl font-black text-primary dark:text-white uppercase tracking-widest leading-[1.05] mb-6">
+                Proyectos <span class="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-primary/80">Destacados</span>
+            </h1>
+
+            <!-- Subtitle -->
+            <p class="text-center text-xl text-neutral-500 dark:text-neutral-400 max-w-2xl mx-auto mb-8">
+                Explore a través de estos registros visuales la calidad técnica y el compromiso que ponemos en cada obra hidrosanitaria y civil.
+            </p>
+
+            <!-- Animated underline -->
+            <div class="mx-auto flex items-center justify-center gap-2">
+                <div class="h-px w-16 bg-gradient-to-r from-transparent to-secondary/60"></div>
+                <div class="h-1.5 w-10 rounded-full bg-gradient-to-r from-primary to-secondary"></div>
+                <div class="h-px w-16 bg-gradient-to-l from-transparent to-secondary/60"></div>
             </div>
         </div>
     </section>
