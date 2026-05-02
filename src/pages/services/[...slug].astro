@@ -203,7 +203,7 @@ const finalGallery = gallery.length > 0 ? gallery : [post.data.banner, post.data
 
                 <!-- Title -->
                 <div class="text-center mb-10">
-                    <h1 class="text-3xl font-black text-primary dark:text-white md:text-5xl lg:text-6xl uppercase tracking-tight leading-[1.1]">
+                    <h1 class="text-3xl font-black text-primary dark:text-white md:text-5xl lg:text-6xl uppercase tracking-widest leading-[1.1]">
                         {post.data.title}
                     </h1>
                     <!-- Animated underline -->
@@ -246,7 +246,7 @@ const finalGallery = gallery.length > 0 ? gallery : [post.data.banner, post.data
                             <!-- Text -->
                             <div class="relative min-w-0">
                                 <span class="block text-[10px] uppercase tracking-[0.2em] text-neutral-400 dark:text-neutral-500 font-bold mb-0.5">Anterior</span>
-                                <span class="block text-sm font-bold text-primary dark:text-neutral-200 group-hover:text-secondary transition-colors duration-300 truncate uppercase tracking-tight">
+                                <span class="block text-sm font-bold text-primary dark:text-neutral-200 group-hover:text-secondary transition-colors duration-300 truncate uppercase tracking-widest text-center w-full">
                                     {prevPost.slug.slice(2).replaceAll("-", " ")}
                                 </span>
                             </div>
@@ -265,7 +265,7 @@ const finalGallery = gallery.length > 0 ? gallery : [post.data.banner, post.data
                             <!-- Text -->
                             <div class="relative min-w-0">
                                 <span class="block text-[10px] uppercase tracking-[0.2em] text-neutral-400 dark:text-neutral-500 font-bold mb-0.5">Siguiente</span>
-                                <span class="block text-sm font-bold text-primary dark:text-neutral-200 group-hover:text-secondary transition-colors duration-300 truncate uppercase tracking-tight">
+                                <span class="block text-sm font-bold text-primary dark:text-neutral-200 group-hover:text-secondary transition-colors duration-300 truncate uppercase tracking-widest text-center w-full">
                                     {nextPost.slug.slice(2).replaceAll("-", " ")}
                                 </span>
                             </div>

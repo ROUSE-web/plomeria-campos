@@ -20,3 +20,5 @@ tags: ["plomeria"]
 ![Baños](@images/services/comercial/comercial5.jpg)
 
 ![Manguera](@images/services/comercial/comercial6.jpg)
+
+![Cañerias](@images/services/comercial/comercial7.webp)

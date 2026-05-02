@@ -29,7 +29,7 @@ const posts: CollectionEntry<"posts">[] = (await getCollection("posts"))
         <div class="mx-auto max-w-[85rem] px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-16">
                 <h2 class="text-xs font-bold text-secondary uppercase tracking-[0.4em] mb-4">&iquest;Algo no va bien?</h2>
-                <h3 class="text-3xl md:text-5xl font-bold text-primary dark:text-neutral-100 uppercase tracking-tighter leading-tight mb-6">
+                <h3 class="text-3xl md:text-5xl font-bold text-primary dark:text-neutral-100 uppercase tracking-widest leading-tight mb-6">
                     Solucionamos los <span class="text-secondary">problemas</span> que le quitan el sue&ntilde;o
                 </h3>
                 <p class="text-lg text-neutral-600 dark:text-neutral-400">
@@ -51,7 +51,7 @@ const posts: CollectionEntry<"posts">[] = (await getCollection("posts"))
                                 <path stroke-linecap="round" stroke-linejoin="round" d={item.i} />
                             </svg>
                         </div>
-                        <h4 class="text-lg font-bold text-primary dark:text-neutral-100 mb-3 leading-tight uppercase tracking-tighter" set:html={item.t}></h4>
+                        <h4 class="text-lg font-bold text-primary dark:text-neutral-100 mb-3 leading-tight uppercase tracking-widest" set:html={item.t}></h4>
                         <p class="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed" set:html={item.d}></p>
                     </div>
                 ))}
@@ -72,7 +72,7 @@ const posts: CollectionEntry<"posts">[] = (await getCollection("posts"))
     <section class="mx-auto max-w-[85rem] px-4 py-24 sm:px-6 lg:px-8">
         <div class="max-w-2xl mx-auto text-center mb-16">
             <h2 class="text-xs font-bold text-secondary uppercase tracking-[0.4em] mb-4">Experiencia Garantizada</h2>
-            <h3 class="text-4xl md:text-5xl font-bold text-primary dark:text-neutral-100 uppercase tracking-tight leading-none mb-6">Nuestros Servicios</h3>
+            <h3 class="text-4xl md:text-5xl font-bold text-primary dark:text-neutral-100 uppercase tracking-widest leading-none mb-6">Nuestros Servicios</h3>
             <p class="text-lg text-neutral-500 dark:text-neutral-400">Soluciones técnicas confiables y profesionales para su hogar o empresa.</p>
             <div class="mt-8 h-1 w-24 bg-secondary mx-auto rounded-full"></div>
         </div>
@@ -108,7 +108,7 @@ const posts: CollectionEntry<"posts">[] = (await getCollection("posts"))
                             </div>
 
                             <div class="relative z-10">
-                                <h3 class="text-2xl font-bold text-primary dark:text-neutral-100 uppercase tracking-tighter mb-4 leading-tight group-hover:text-secondary transition-colors">
+                                <h3 class="text-2xl font-bold text-primary dark:text-neutral-100 uppercase tracking-widest mb-4 leading-tight group-hover:text-secondary transition-colors">
                                     {post.data.title}
                                 </h3>
                                 <p class="text-neutral-500 dark:text-neutral-400 text-sm leading-relaxed line-clamp-3">
@@ -152,7 +152,7 @@ const posts: CollectionEntry<"posts">[] = (await getCollection("posts"))
         <div class="mx-auto max-w-[85rem] px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-16">
                 <h2 class="text-xs font-bold text-secondary uppercase tracking-[0.4em] mb-4">Confianza que Construye</h2>
-                <h3 class="text-4xl md:text-5xl font-bold text-primary dark:text-neutral-100 uppercase tracking-tighter leading-none mb-6">
+                <h3 class="text-4xl md:text-5xl font-bold text-primary dark:text-neutral-100 uppercase tracking-widest leading-none mb-6">
                     Lo que dicen nuestros <span class="text-secondary">clientes</span>
                 </h3>
                 <p class="text-lg text-neutral-600 dark:text-neutral-400">
@@ -162,9 +162,9 @@ const posts: CollectionEntry<"posts">[] = (await getCollection("posts"))
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {[
-                    { n: "Mar&iacute;a G.", r: "Residente", t: "Excelente servicio, llegaron r&aacute;pido y solucionaron una fuga que otros no pudieron. Muy profesionales y limpios al trabajar.", s: 5 },
-                    { n: "Ing. Roberto S.", r: "Constructor", t: "Muy profesionales en la instalaci&oacute;n de gas de nuestro edificio. Cumplieron con todos los plazos y normas de seguridad exigidas.", s: 5 },
-                    { n: "Carlos P.", r: "Propietario", t: "Atenci&oacute;n 24/7 real. Me salvaron de una inundaci&oacute;n un domingo a las 3 AM. El trato fue impecable y el precio justo.", s: 5 }
+                    { n: "Dra. Marcela Quiroz", r: "Constructora DRY LINE", t: "En Constructora DRY LINE confiamos plenamente en Plomería Campos para toda nuestra ingeniería hidrosanitaria. Su profesionalismo, cumplimiento de normas y calidad técnica son excepcionales.", s: 5 },
+                    { n: "Ing. Roberto S.", r: "Constructor", t: "Muy profesionales en la instalación de gas de nuestro edificio. Cumplieron con todos los plazos y normas de seguridad exigidas.", s: 5 },
+                    { n: "Lic. Alejandro M.", r: "Inmobiliaria", t: "El mantenimiento preventivo que realiza Plomería Campos en nuestros edificios ha reducido las emergencias en un 80%. Son socios estratégicos indispensables para nuestra gestión inmobiliaria.", s: 5 }
                 ].map((testimonial) => (
                     <div class="group relative bg-white dark:bg-neutral-900 p-10 rounded-[2.5rem] border border-neutral-200 dark:border-neutral-800 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5 hover:-translate-y-2">
                         <!-- Quote Icon -->
@@ -213,7 +213,7 @@ const posts: CollectionEntry<"posts">[] = (await getCollection("posts"))
                 <div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <div>
                         <h2 class="text-xs font-bold text-secondary uppercase tracking-[0.4em] mb-6">¿Listo para comenzar?</h2>
-                        <h3 class="text-4xl md:text-6xl font-bold text-white uppercase tracking-tighter leading-none mb-8">
+                        <h3 class="text-4xl md:text-6xl font-bold text-white uppercase tracking-widest leading-none mb-8">
                             Transformamos sus <span class="text-secondary">problemas</span> en soluciones t&eacute;cnicas
                         </h3>
                         <p class="text-xl text-neutral-300 leading-relaxed mb-10">
