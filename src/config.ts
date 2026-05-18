@@ -2,7 +2,7 @@ import type { NavigationLink, Site } from "./types.ts";
 
 export const SITE: Site = {
     author: "Deyvi Rodriguez",
-    url: "https://plomeriacampos.com",
+    url: "https://plomeriacampos.net",
     title: "Plomeria Campos",
     description:
         "PLOMERIA CAMPOS es una empresa de servicios dedicada en fontanería e hidrosanitaria, instalación de redes de agua, alcantarillado, bombas de agua, desagües pluviales, contraincendios, entre otros en todo el territorio boliviano.",
