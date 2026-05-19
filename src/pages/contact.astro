@@ -93,176 +93,178 @@ const URL = Astro.url.href;
         </div>
     </section>
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-        <!-- Información de contacto (Canales de Atención) -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {
-                [
-                    {
-                        title: "Ubicación Central",
-                        value: "Cochabamba, Bolivia",
-                        sub: "Servicio a domicilio en toda la ciudad.",
-                        icon: "mapPin",
-                        link: null,
-                    },
-                    {
-                        title: "WhatsApp",
-                        value: "(+591) 78300509",
-                        sub: "Respuesta inmediata por chat.",
-                        icon: "whatsapp",
-                        link: "https://wa.me/59178300509",
-                    },
-                    {
-                        title: "Email Corporativo",
-                        value: "serviplom29@gmail.com",
-                        sub: "Para consultas y presupuestos detallados.",
-                        icon: "email",
-                        link: "mailto:serviplom29@gmail.com",
-                    },
-                    {
-                        title: "Horario Comercial",
-                        value: "Lun - Sáb: 8:00 - 18:30",
-                        sub: "Emergencias técnicas 24/7.",
-                        icon: "clock",
-                        link: null,
-                    },
-                ].map((item, idx) => (
-                    <div class="group relative bg-white dark:bg-neutral-900/40 p-8 rounded-[2.5rem] border border-neutral-200 dark:border-neutral-800 transition-all duration-500 hover:bg-white dark:hover:bg-neutral-900 hover:shadow-2xl hover:-translate-y-2 overflow-hidden">
-                        <div class="absolute -right-2 -bottom-2 text-7xl font-black text-neutral-100 dark:text-neutral-800/30 group-hover:text-primary/10 transition-colors pointer-events-none">
-                            0{idx + 1}
+    <section class="mx-auto max-w-[85rem] px-4 py-12 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+            <!-- Información de contacto (Canales de Atención) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                {
+                    [
+                        {
+                            title: "Ubicación Central",
+                            value: "Cochabamba, Bolivia",
+                            sub: "Servicio a domicilio en toda la ciudad.",
+                            icon: "mapPin",
+                            link: null,
+                        },
+                        {
+                            title: "WhatsApp",
+                            value: "(+591) 78300509",
+                            sub: "Respuesta inmediata por chat.",
+                            icon: "whatsapp",
+                            link: "https://wa.me/59178300509",
+                        },
+                        {
+                            title: "Email Corporativo",
+                            value: "serviplom29@gmail.com",
+                            sub: "Para consultas y presupuestos detallados.",
+                            icon: "email",
+                            link: "mailto:serviplom29@gmail.com",
+                        },
+                        {
+                            title: "Horario Comercial",
+                            value: "Lun - Sáb: 8:00 - 18:30",
+                            sub: "Emergencias técnicas 24/7.",
+                            icon: "clock",
+                            link: null,
+                        },
+                    ].map((item, idx) => (
+                        <div class="group relative bg-white dark:bg-neutral-900/40 p-8 rounded-[2.5rem] border border-neutral-200 dark:border-neutral-800 transition-all duration-500 hover:bg-white dark:hover:bg-neutral-900 hover:shadow-2xl hover:-translate-y-2 overflow-hidden">
+                            <div class="absolute -right-2 -bottom-2 text-7xl font-black text-neutral-100 dark:text-neutral-800/30 group-hover:text-primary/10 transition-colors pointer-events-none">
+                                0{idx + 1}
+                            </div>
+                            <div class="relative z-10">
+                                <div class="mb-6 inline-flex p-4 bg-neutral-50 dark:bg-neutral-800 rounded-2xl shadow-sm border border-neutral-100 dark:border-neutral-700 group-hover:bg-primary group-hover:border-primary transition-all duration-500">
+                                    <Icon
+                                        name={item.icon}
+                                        class="size-6 text-secondary group-hover:text-white transition-colors"
+                                    />
+                                </div>
+                                <h4 class="text-xs font-bold text-secondary uppercase tracking-[0.2em] mb-2">
+                                    {item.title}
+                                </h4>
+                                {item.link ? (
+                                    <a
+                                        href={item.link}
+                                        class="text-lg font-bold text-primary dark:text-neutral-100 hover:text-secondary dark:hover:text-secondary transition-colors leading-tight block mb-2"
+                                    >
+                                        {item.value}
+                                    </a>
+                                ) : (
+                                    <p class="text-lg font-bold text-primary dark:text-neutral-100 leading-tight mb-2">
+                                        {item.value}
+                                    </p>
+                                )}
+                                <p class="text-xs text-neutral-500 dark:text-neutral-400 leading-relaxed">
+                                    {item.sub}
+                                </p>
+                            </div>
                         </div>
-                        <div class="relative z-10">
-                            <div class="mb-6 inline-flex p-4 bg-neutral-50 dark:bg-neutral-800 rounded-2xl shadow-sm border border-neutral-100 dark:border-neutral-700 group-hover:bg-primary group-hover:border-primary transition-all duration-500">
-                                <Icon
-                                    name={item.icon}
-                                    class="size-6 text-secondary group-hover:text-white transition-colors"
+                    ))
+                }
+            </div>
+
+            <!-- Formulario WhatsApp -->
+            <div
+                class="bg-neutral-50 dark:bg-neutral-900/60 border border-neutral-200 dark:border-neutral-800 p-8 md:p-12 rounded-[2.5rem] shadow-2xl relative overflow-hidden"
+            >
+                <div
+                    class="absolute top-0 right-0 w-32 h-32 bg-secondary/10 rounded-full blur-3xl -mr-16 -mt-16"
+                >
+                </div>
+                <div class="relative z-10">
+                    <h3
+                        class="text-3xl font-bold text-primary dark:text-neutral-100 uppercase tracking-widest mb-8"
+                    >
+                        Solicitar <span class="text-secondary">Presupuesto</span>
+                    </h3>
+
+                    <form id="whatsappForm" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label
+                                    class="block text-xs font-bold text-neutral-500 dark:text-neutral-400 uppercase tracking-widest mb-2 ml-1"
+                                    >Nombre Completo</label
+                                >
+                                <input
+                                    type="text"
+                                    id="name"
+                                    required
+                                    class="w-full px-6 py-4 bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-2xl focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all dark:text-white"
+                                    placeholder="Su nombre"
                                 />
                             </div>
-                            <h4 class="text-xs font-bold text-secondary uppercase tracking-[0.2em] mb-2">
-                                {item.title}
-                            </h4>
-                            {item.link ? (
-                                <a
-                                    href={item.link}
-                                    class="text-lg font-bold text-primary dark:text-neutral-100 hover:text-secondary dark:hover:text-secondary transition-colors leading-tight block mb-2"
+                            <div>
+                                <label
+                                    class="block text-xs font-bold text-neutral-500 dark:text-neutral-400 uppercase tracking-widest mb-2 ml-1"
+                                    >Teléfono</label
                                 >
-                                    {item.value}
-                                </a>
-                            ) : (
-                                <p class="text-lg font-bold text-primary dark:text-neutral-100 leading-tight mb-2">
-                                    {item.value}
-                                </p>
-                            )}
-                            <p class="text-xs text-neutral-500 dark:text-neutral-400 leading-relaxed">
-                                {item.sub}
-                            </p>
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    required
+                                    class="w-full px-6 py-4 bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-2xl focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all dark:text-white"
+                                    placeholder="Ej: 78300509"
+                                />
+                            </div>
                         </div>
-                    </div>
-                ))
-            }
-        </div>
 
-        <!-- Formulario WhatsApp -->
-        <div
-            class="bg-neutral-50 dark:bg-neutral-900/60 border border-neutral-200 dark:border-neutral-800 p-8 md:p-12 rounded-[2.5rem] shadow-2xl relative overflow-hidden"
-        >
-            <div
-                class="absolute top-0 right-0 w-32 h-32 bg-secondary/10 rounded-full blur-3xl -mr-16 -mt-16"
-            >
-            </div>
-            <div class="relative z-10">
-                <h3
-                    class="text-3xl font-bold text-primary dark:text-neutral-100 uppercase tracking-widest mb-8"
-                >
-                    Solicitar <span class="text-secondary">Presupuesto</span>
-                </h3>
-
-                <form id="whatsappForm" class="space-y-6">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label
                                 class="block text-xs font-bold text-neutral-500 dark:text-neutral-400 uppercase tracking-widest mb-2 ml-1"
-                                >Nombre Completo</label
+                                >Servicio de Interés</label
                             >
-                            <input
-                                type="text"
-                                id="name"
-                                required
-                                class="w-full px-6 py-4 bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-2xl focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all dark:text-white"
-                                placeholder="Su nombre"
-                            />
+                            <select
+                                id="service"
+                                class="w-full px-6 py-4 bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-2xl focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all dark:text-white appearance-none"
+                            >
+                                <option value="Plomería General"
+                                    >Plomería General</option
+                                >
+                                <option value="Instalación de Gas"
+                                    >Instalación de Gas</option
+                                >
+                                <option value="Obras Civiles">Obras Civiles</option>
+                                <option value="Electricidad">Electricidad</option>
+                                <option value="Mantenimiento Industrial"
+                                    >Mantenimiento Industrial</option
+                                >
+                                <option value="Otros">Otros</option>
+                            </select>
                         </div>
+
                         <div>
                             <label
                                 class="block text-xs font-bold text-neutral-500 dark:text-neutral-400 uppercase tracking-widest mb-2 ml-1"
-                                >Teléfono</label
+                                >Detalles del Requerimiento</label
                             >
-                            <input
-                                type="tel"
-                                id="phone"
+                            <textarea
+                                id="message"
+                                rows="4"
                                 required
-                                class="w-full px-6 py-4 bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-2xl focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all dark:text-white"
-                                placeholder="Ej: 78300509"
-                            />
+                                class="w-full px-6 py-4 bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-2xl focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all dark:text-white resize-none"
+                                placeholder="Describa brevemente lo que necesita..."
+                            ></textarea>
                         </div>
-                    </div>
 
-                    <div>
-                        <label
-                            class="block text-xs font-bold text-neutral-500 dark:text-neutral-400 uppercase tracking-widest mb-2 ml-1"
-                            >Servicio de Interés</label
+                        <button
+                            type="submit"
+                            class="w-full bg-primary hover:bg-secondary text-white font-bold py-5 px-8 rounded-2xl shadow-xl shadow-primary/20 transition-all duration-300 transform hover:scale-[1.02] active:scale-95 flex items-center justify-center gap-x-3 uppercase tracking-widest text-sm"
                         >
-                        <select
-                            id="service"
-                            class="w-full px-6 py-4 bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-2xl focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all dark:text-white appearance-none"
+                            <Icon name="whatsapp" class="size-6" />
+                            Enviar a WhatsApp
+                        </button>
+
+                        <p
+                            class="text-[10px] text-center text-neutral-500 mt-6 uppercase tracking-wider"
                         >
-                            <option value="Plomería General"
-                                >Plomería General</option
-                            >
-                            <option value="Instalación de Gas"
-                                >Instalación de Gas</option
-                            >
-                            <option value="Obras Civiles">Obras Civiles</option>
-                            <option value="Electricidad">Electricidad</option>
-                            <option value="Mantenimiento Industrial"
-                                >Mantenimiento Industrial</option
-                            >
-                            <option value="Otros">Otros</option>
-                        </select>
-                    </div>
-
-                    <div>
-                        <label
-                            class="block text-xs font-bold text-neutral-500 dark:text-neutral-400 uppercase tracking-widest mb-2 ml-1"
-                            >Detalles del Requerimiento</label
-                        >
-                        <textarea
-                            id="message"
-                            rows="4"
-                            required
-                            class="w-full px-6 py-4 bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-2xl focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all dark:text-white resize-none"
-                            placeholder="Describa brevemente lo que necesita..."
-                        ></textarea>
-                    </div>
-
-                    <button
-                        type="submit"
-                        class="w-full bg-primary hover:bg-secondary text-white font-bold py-5 px-8 rounded-2xl shadow-xl shadow-primary/20 transition-all duration-300 transform hover:scale-[1.02] active:scale-95 flex items-center justify-center gap-x-3 uppercase tracking-widest text-sm"
-                    >
-                        <Icon name="whatsapp" class="size-6" />
-                        Enviar a WhatsApp
-                    </button>
-
-                    <p
-                        class="text-[10px] text-center text-neutral-500 mt-6 uppercase tracking-wider"
-                    >
-                        Al hacer clic, será redirigido a WhatsApp para iniciar
-                        el chat con nuestro equipo.
-                    </p>
-                </form>
+                            Al hacer clic, será redirigido a WhatsApp para iniciar
+                            el chat con nuestro equipo.
+                        </p>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 </BaseLayout>
 
 <script is:inline>

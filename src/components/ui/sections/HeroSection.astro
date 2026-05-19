@@ -2,7 +2,7 @@
 import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
 import SecondaryCTA from "@components/ui/buttons/SecondaryCTA.astro";
 import { Image } from "astro:assets";
-import portada from "@images/portada.jpg";
+import portada from "@images/portada.webp";
 
 const {
     title,
@@ -34,11 +34,16 @@ interface Props {
             src={portada}
             alt="Portada Plomería Campos"
         />
-        <div class="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/20 dark:from-[#0f1d32] dark:via-[#0f1d32]/90 dark:to-transparent"></div>
+        <div
+            class="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/20 dark:from-[#0f1d32] dark:via-[#0f1d32]/90 dark:to-transparent"
+        >
+        </div>
     </div>
 
-    <div class="mx-auto max-w-[85rem] px-4 py-20 sm:px-6 md:py-32 lg:px-8 2xl:max-w-full min-h-[35rem] md:min-h-[45rem] flex items-center">
-        <div class="max-w-3xl">
+    <div
+        class="mx-auto max-w-[85rem] px-4 py-20 sm:px-6 md:py-32 lg:px-8 2xl:max-w-full min-h-[35rem] md:min-h-[45rem] flex items-center"
+    >
+        <div class="max-w-3xl pl-4 md:pl-8 lg:pl-12">
             <h1
                 class="block text-balance text-4xl font-bold tracking-tight text-primary dark:text-neutral-100 sm:text-6xl lg:text-7xl lg:leading-[1.1]"
             >
@@ -60,26 +65,55 @@ interface Props {
                 }
                 {
                     secondaryBtn && (
-                        <SecondaryCTA title={secondaryBtn} url={secondaryBtnURL} />
+                        <SecondaryCTA
+                            title={secondaryBtn}
+                            url={secondaryBtnURL}
+                        />
                     )
                 }
             </div>
 
             <!-- Trust Badges / Stats (Premium Touch) -->
-            <div class="mt-8 sm:mt-12 flex flex-col sm:flex-row items-start sm:items-center gap-y-4 sm:gap-y-0 sm:gap-x-8 opacity-70">
+            <div
+                class="mt-8 sm:mt-12 flex flex-col sm:flex-row items-start sm:items-center gap-y-4 sm:gap-y-0 sm:gap-x-8 opacity-70"
+            >
                 <div class="flex flex-col">
-                    <span class="text-xl sm:text-2xl font-bold text-primary dark:text-secondary">10+</span>
-                    <span class="text-[10px] sm:text-xs uppercase tracking-widest font-semibold dark:text-white">Años de Experiencia</span>
+                    <span
+                        class="text-xl sm:text-2xl font-bold text-primary dark:text-secondary"
+                        >10+</span
+                    >
+                    <span
+                        class="text-[10px] sm:text-xs uppercase tracking-widest font-semibold dark:text-white"
+                        >Años de Experiencia</span
+                    >
                 </div>
-                <div class="hidden sm:block h-8 w-[1px] bg-neutral-300 dark:bg-neutral-700"></div>
-                <div class="flex flex-col">
-                    <span class="text-xl sm:text-2xl font-bold text-primary dark:text-secondary">100%</span>
-                    <span class="text-[10px] sm:text-xs uppercase tracking-widest font-semibold dark:text-white">Garantía Técnica</span>
+                <div
+                    class="hidden sm:block h-8 w-[1px] bg-neutral-300 dark:bg-neutral-700"
+                >
                 </div>
-                <div class="hidden sm:block h-8 w-[1px] bg-neutral-300 dark:bg-neutral-700"></div>
                 <div class="flex flex-col">
-                    <span class="text-xl sm:text-2xl font-bold text-primary dark:text-secondary">Bolivia</span>
-                    <span class="text-[10px] sm:text-xs uppercase tracking-widest font-semibold dark:text-white">Cobertura Nacional</span>
+                    <span
+                        class="text-xl sm:text-2xl font-bold text-primary dark:text-secondary"
+                        >100%</span
+                    >
+                    <span
+                        class="text-[10px] sm:text-xs uppercase tracking-widest font-semibold dark:text-white"
+                        >Garantía Técnica</span
+                    >
+                </div>
+                <div
+                    class="hidden sm:block h-8 w-[1px] bg-neutral-300 dark:bg-neutral-700"
+                >
+                </div>
+                <div class="flex flex-col">
+                    <span
+                        class="text-xl sm:text-2xl font-bold text-primary dark:text-secondary"
+                        >Bolivia</span
+                    >
+                    <span
+                        class="text-[10px] sm:text-xs uppercase tracking-widest font-semibold dark:text-white"
+                        >Cobertura Nacional</span
+                    >
                 </div>
             </div>
         </div>

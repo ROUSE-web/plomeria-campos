@@ -74,10 +74,10 @@ const normalizeTitle = !title ? SITE.title : `${title} | ${SITE.title}`;
         <WhatsappFloat />
         <div class="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8">
             <Header />
-            <main>
-                <slot />
-            </main>
         </div>
+        <main>
+            <slot />
+        </main>
         <Footer />
         <style>
             .scrollbar-hide::-webkit-scrollbar {
