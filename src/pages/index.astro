@@ -163,51 +163,319 @@ const posts: CollectionEntry<"posts">[] = (await getCollection("posts"))
                     La satisfacci&oacute;n de quienes conf&iacute;an en nosotros es nuestro mejor respaldo y garant&iacute;a de calidad.
                 </p>
             </div>
+        </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {[
-                    { n: "Dra. Marcela Quiroz y Arq. Erik", r: "Constructora DRY LINE", t: "En Constructora DRY LINE confiamos plenamente en Plomería Campos para toda nuestra ingeniería hidrosanitaria. Su profesionalismo, cumplimiento de normas y calidad técnica son excepcionales.", s: 5 },
-                    { n: "Ing. Roberto S.", r: "Constructor", t: "Muy profesionales en la instalación de gas de nuestro edificio. Cumplieron con todos los plazos y normas de seguridad exigidas.", s: 5 },
-                    { n: "Lic. Alejandro M.", r: "Torre ALTIVA, Constuctora SG+A", t: "El mantenimiento preventivo que realiza Plomería Campos en nuestros edificios ha reducido las emergencias en un 80%. Son socios estratégicos indispensables para nuestra gestión inmobiliaria.", s: 5 }
-                ].map((testimonial) => (
-                    <div class="group relative bg-white dark:bg-[#0d1a2e]/80 p-10 rounded-[2.5rem] border border-neutral-200 dark:border-secondary/20 shadow-sm dark:shadow-[0_4px_24px_rgba(0,0,0,0.4)] overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5 dark:hover:shadow-[0_8px_32px_rgba(128,204,226,0.08)] hover:-translate-y-2 dark:hover:border-secondary/40">
-                        <!-- Dark mode glow accent -->
-                        <div class="absolute inset-0 bg-gradient-to-br from-secondary/0 to-secondary/0 dark:group-hover:from-secondary/5 dark:group-hover:to-primary/5 transition-all duration-500 rounded-[2.5rem] pointer-events-none z-0"></div>
-                        
-                        <!-- Quote Icon -->
-                        <div class="absolute top-8 right-10 text-neutral-100 dark:text-white/5 group-hover:text-secondary/20 transition-colors duration-500 z-10">
-                            <svg class="size-12 fill-current" viewBox="0 0 24 24">
-                                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.883z" />
-                            </svg>
-                        </div>
-                        
-                        <!-- Stars -->
-                        <div class="relative z-10 flex gap-x-1 mb-6">
-                            {[...Array(testimonial.s)].map(() => (
-                                <svg class="size-4 text-secondary fill-current" viewBox="0 0 20 20">
-                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                </svg>
-                            ))}
-                        </div>
+        <!-- Carousel Container -->
+        <div class="relative w-full" id="testimonial-carousel-wrapper">
+            <!-- Gradient fade edges -->
+            <div class="absolute left-0 top-0 bottom-0 w-24 md:w-40 z-10 pointer-events-none bg-gradient-to-r from-neutral-50 dark:from-[#070f1e] to-transparent"></div>
+            <div class="absolute right-0 top-0 bottom-0 w-24 md:w-40 z-10 pointer-events-none bg-gradient-to-l from-neutral-50 dark:from-[#070f1e] to-transparent"></div>
 
-                        <p class="text-neutral-600 dark:text-neutral-300 italic mb-8 relative z-10 leading-relaxed">
-                            &quot;{testimonial.t}&quot;
-                        </p>
-
-                        <div class="relative z-10 flex items-center gap-x-4 border-t border-neutral-100 dark:border-secondary/10 pt-6">
-                            <div class="size-12 rounded-full bg-primary/10 dark:bg-secondary/10 flex items-center justify-center text-primary dark:text-secondary font-black text-sm uppercase">
-                                {testimonial.n.charAt(0)}
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-primary dark:text-white leading-none mb-1">{testimonial.n}</h4>
-                                <p class="text-xs text-neutral-500 dark:text-neutral-400 uppercase tracking-widest">{testimonial.r}</p>
-                            </div>
-                        </div>
-                    </div>
-                ))}
+            <div class="overflow-hidden py-12" id="testimonial-viewport">
+                <div class="flex gap-6 transition-none" id="testimonial-track" style="will-change: transform;">
+                    <!-- Cards injected by JS -->
+                </div>
             </div>
+
+            <!-- Dot indicators -->
+            <div class="flex justify-center gap-2 mt-2" id="testimonial-dots"></div>
         </div>
     </section>
+
+    <script is:inline>
+    (function () {
+        const testimonials = [
+            { n: "Dra. Marcela Quiroz y Arq. Erik", r: "Constructora DRY LINE", t: "En Constructora DRY LINE confiamos plenamente en Plomería Campos para toda nuestra ingeniería hidrosanitaria. Su profesionalismo, cumplimiento de normas y calidad técnica son excepcionales.", s: 5 },
+            { n: "Ing. Carlos Montan", r: "CONTMIN S.A.C.", t: "Excelente trabajo en la instalación de la red de agua y el sistema de supresión de incendios en el Túnel Incahuasi. Su solvencia técnica en condiciones subterráneas de alta complejidad fue fundamental para el éxito del proyecto.", s: 5 },
+            { n: "Arq. Leandro", r: "Constructora SG+A", t: "El mantenimiento preventivo que realiza Plomería Campos en nuestros edificios ha reducido las emergencias en un 80%. Son socios estratégicos indispensables para nuestra gestión inmobiliaria.", s: 5 },
+            { n: "Ing. Cimar Humerez", r: "Estación Central del Tren Metropolitano", t: "La instalación y el mantenimiento de las redes de agua y desagüe de la estación central del tren metropolitano fueron realizados con total profesionalismo y eficiencia por Plomería Campos.", s: 5 },
+            { n: "Ing. Luis A. Siles", r: "Constructora Compacto S.R.L.", t: "La ejecución de las obras de plomería industrial e ingeniería hidrosanitaria en la Planta de Urea y Amoniaco en Cochabamba fue impecable, demostrando rigurosidad técnica y total apego a las normas de seguridad industrial.", s: 5 }
+        ];
+
+        const CARD_WIDTH = 420;
+        const GAP = 24;
+        const STEP = CARD_WIDTH + GAP;
+        const AUTO_INTERVAL = 3200;
+        const TRANSITION_MS = 600;
+        const COUNT = testimonials.length;
+
+        let currentIndex = 0; // logical index in original array
+        let isAnimating = false;
+        let autoTimer = null;
+
+        const track = document.getElementById('testimonial-track');
+        const dotsContainer = document.getElementById('testimonial-dots');
+
+        function starsSVG(count) {
+            return Array.from({ length: count }, () =>
+                `<svg class="size-4 text-secondary fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>`
+            ).join('');
+        }
+
+        function cardHTML(t, idx) {
+            const initial = t.n.charAt(0).toUpperCase();
+            return `
+                <div class="testimonial-card flex-shrink-0 relative bg-white dark:bg-[#0d1a2e]/90 rounded-[2rem] border border-neutral-200 dark:border-secondary/20 shadow-sm overflow-hidden transition-all duration-500 select-none cursor-grab active:cursor-grabbing"
+                     style="width:${CARD_WIDTH}px; padding: 2.5rem;"
+                     data-idx="${idx}">
+                    <!-- Glow accent -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-secondary/0 to-secondary/0 card-glow transition-all duration-500 rounded-[2rem] pointer-events-none z-0"></div>
+                    <!-- Quote icon -->
+                    <div class="absolute top-6 right-8 text-neutral-100 dark:text-white/5 card-quote transition-colors duration-500 z-10">
+                        <svg class="w-10 h-10 fill-current" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.883z"/></svg>
+                    </div>
+                    <!-- Stars -->
+                    <div class="relative z-10 flex gap-x-1 mb-5">${starsSVG(t.s)}</div>
+                    <!-- Text -->
+                    <p class="text-neutral-600 dark:text-neutral-300 italic mb-7 relative z-10 leading-relaxed text-sm">&ldquo;${t.t}&rdquo;</p>
+                    <!-- Author -->
+                    <div class="relative z-10 flex items-center gap-x-4 border-t border-neutral-100 dark:border-secondary/10 pt-5">
+                        <div class="size-11 rounded-full bg-primary/10 dark:bg-secondary/10 flex items-center justify-center text-primary dark:text-secondary font-black text-sm uppercase flex-shrink-0">${initial}</div>
+                        <div>
+                            <h4 class="font-bold text-primary dark:text-white leading-none mb-1 text-sm">${t.n}</h4>
+                            <p class="text-xs text-neutral-500 dark:text-neutral-400 uppercase tracking-widest">${t.r}</p>
+                        </div>
+                    </div>
+                </div>`;
+        }
+
+        function buildTrack() {
+            // Triple the testimonials for seamless infinite loop: [clone_before | originals | clone_after]
+            const all = [...testimonials, ...testimonials, ...testimonials];
+            track.innerHTML = all.map((t, i) => cardHTML(t, i % COUNT)).join('');
+        }
+
+        function buildDots() {
+            dotsContainer.innerHTML = testimonials.map((_, i) =>
+                `<button class="testimonial-dot w-2 h-2 rounded-full transition-all duration-300 ${i === 0 ? 'bg-secondary w-6' : 'bg-neutral-300 dark:bg-neutral-600'}" data-dot="${i}" aria-label="Ir al testimonio ${i + 1}"></button>`
+            ).join('');
+            dotsContainer.querySelectorAll('.testimonial-dot').forEach(btn => {
+                btn.addEventListener('click', () => goTo(parseInt(btn.dataset.dot), true));
+            });
+        }
+
+        function updateDots() {
+            dotsContainer.querySelectorAll('.testimonial-dot').forEach((btn, i) => {
+                const active = i === currentIndex;
+                btn.className = `testimonial-dot rounded-full transition-all duration-300 ${active ? 'bg-secondary w-6 h-2' : 'bg-neutral-300 dark:bg-neutral-600 w-2 h-2'}`;
+            });
+        }
+
+        function getViewportCenter() {
+            return document.getElementById('testimonial-viewport').offsetWidth / 2;
+        }
+
+        // The "real" cards start at index COUNT in the track (middle set of the triple)
+        function trackXForIndex(logicalIdx) {
+            const trackStart = COUNT; // offset into middle set
+            const cardIdx = trackStart + logicalIdx;
+            const center = getViewportCenter();
+            return -(cardIdx * STEP - center + CARD_WIDTH / 2);
+        }
+
+        function applyCardStyles(animate) {
+            const cards = track.querySelectorAll('.testimonial-card');
+            const center = getViewportCenter();
+            const trackRect = track.getBoundingClientRect();
+            const viewportRect = document.getElementById('testimonial-viewport').getBoundingClientRect();
+
+            cards.forEach(card => {
+                const cardRect = card.getBoundingClientRect();
+                const cardCenter = cardRect.left + cardRect.width / 2 - viewportRect.left;
+                const dist = Math.abs(cardCenter - center);
+                const maxDist = STEP * 1.5;
+                const ratio = Math.min(dist / maxDist, 1);
+
+                const opacity = 1 - ratio * 0.65;
+                const scale = 1 - ratio * 0.08;
+                const blur = ratio * 1.5;
+
+                card.style.opacity = opacity;
+                card.style.transform = `scale(${scale})`;
+                card.style.filter = `blur(${blur}px)`;
+
+                const isCenter = dist < STEP * 0.5;
+                const glowEl = card.querySelector('.card-glow');
+                const quoteEl = card.querySelector('.card-quote');
+
+                if (isCenter) {
+                    card.style.boxShadow = 'var(--shadow-active, 0 20px 60px rgba(0,0,0,0.15))';
+                    card.style.borderColor = 'rgba(128,204,226,0.4)';
+                    if (glowEl) glowEl.style.background = 'linear-gradient(135deg, rgba(128,204,226,0.07), rgba(10,43,100,0.05))';
+                    if (quoteEl) quoteEl.style.color = 'rgba(128,204,226,0.22)';
+                } else {
+                    card.style.boxShadow = '';
+                    card.style.borderColor = '';
+                    if (glowEl) glowEl.style.background = '';
+                    if (quoteEl) quoteEl.style.color = '';
+                }
+            });
+        }
+
+        function setTrackX(x, withTransition) {
+            track.style.transition = withTransition ? `transform ${TRANSITION_MS}ms cubic-bezier(0.25, 0.46, 0.45, 0.94)` : 'none';
+            track.style.transform = `translateX(${x}px)`;
+        }
+
+        function goTo(logicalIdx, userAction = false) {
+            if (isAnimating) return;
+            isAnimating = true;
+            currentIndex = ((logicalIdx % COUNT) + COUNT) % COUNT;
+            updateDots();
+
+            const x = trackXForIndex(currentIndex);
+            setTrackX(x, true);
+
+            // After transition ends, check if we need to silently jump (infinite loop)
+            setTimeout(() => {
+                // We always show the "middle" set, so no jump needed with triple clone strategy
+                applyCardStyles(false);
+                isAnimating = false;
+            }, TRANSITION_MS + 50);
+
+            if (userAction) resetAutoplay();
+        }
+
+        function advance() {
+            if (isAnimating) return;
+            isAnimating = true;
+
+            const nextLogical = currentIndex + 1;
+            const isWrapping = currentIndex === COUNT - 1;
+
+            currentIndex = (nextLogical) % COUNT;
+            updateDots();
+
+            if (isWrapping) {
+                // Animate to COUNT+COUNT (the start of the third set = same as start of second set visually)
+                const toIdx = COUNT + COUNT; // wraps to beginning of third set
+                const x = -(toIdx * STEP - getViewportCenter() + CARD_WIDTH / 2);
+                setTrackX(x, true);
+
+                setTimeout(() => {
+                    // Silently jump back to second set position 0
+                    setTrackX(trackXForIndex(0), false);
+                    applyCardStyles(false);
+                    isAnimating = false;
+                }, TRANSITION_MS + 50);
+            } else {
+                setTrackX(trackXForIndex(currentIndex), true);
+                setTimeout(() => {
+                    applyCardStyles(false);
+                    isAnimating = false;
+                }, TRANSITION_MS + 50);
+            }
+        }
+
+        function startAutoplay() {
+            autoTimer = setInterval(advance, AUTO_INTERVAL);
+        }
+
+        function resetAutoplay() {
+            clearInterval(autoTimer);
+            startAutoplay();
+        }
+
+        // Drag/swipe support
+        let dragStartX = null;
+        let dragCurrentX = null;
+        let isDragging = false;
+        let trackStartX = 0;
+
+        function getClientX(e) {
+            return e.touches ? e.touches[0].clientX : e.clientX;
+        }
+
+        track.addEventListener('mousedown', e => {
+            if (e.button !== 0) return;
+            isDragging = true;
+            dragStartX = getClientX(e);
+            const mat = new DOMMatrix(getComputedStyle(track).transform);
+            trackStartX = mat.m41;
+            track.style.transition = 'none';
+            track.style.cursor = 'grabbing';
+            e.preventDefault();
+        });
+
+        track.addEventListener('touchstart', e => {
+            dragStartX = getClientX(e);
+            const mat = new DOMMatrix(getComputedStyle(track).transform);
+            trackStartX = mat.m41;
+            track.style.transition = 'none';
+        }, { passive: true });
+
+        window.addEventListener('mousemove', e => {
+            if (!isDragging) return;
+            dragCurrentX = getClientX(e);
+            const dx = dragCurrentX - dragStartX;
+            track.style.transform = `translateX(${trackStartX + dx}px)`;
+            applyCardStyles(false);
+        });
+
+        track.addEventListener('touchmove', e => {
+            if (dragStartX === null) return;
+            dragCurrentX = getClientX(e);
+            const dx = dragCurrentX - dragStartX;
+            track.style.transform = `translateX(${trackStartX + dx}px)`;
+            applyCardStyles(false);
+        }, { passive: true });
+
+        function endDrag() {
+            if (!isDragging && dragStartX === null) return;
+            isDragging = false;
+            track.style.cursor = '';
+            if (dragCurrentX !== null) {
+                const dx = dragCurrentX - dragStartX;
+                if (Math.abs(dx) > 60) {
+                    goTo(dx < 0 ? currentIndex + 1 : currentIndex - 1, true);
+                } else {
+                    goTo(currentIndex, true);
+                }
+            }
+            dragStartX = null;
+            dragCurrentX = null;
+        }
+
+        window.addEventListener('mouseup', endDrag);
+        track.addEventListener('touchend', endDrag);
+
+        // Click on side cards to navigate
+        track.addEventListener('click', e => {
+            if (Math.abs((dragCurrentX || 0) - (dragStartX || 0)) > 10) return;
+            const card = e.target.closest('.testimonial-card');
+            if (!card) return;
+            const idx = parseInt(card.dataset.idx);
+            if (idx !== currentIndex) {
+                goTo(idx, true);
+            }
+        });
+
+        // Init
+        buildTrack();
+        buildDots();
+
+        // Set initial position without animation
+        requestAnimationFrame(() => {
+            setTrackX(trackXForIndex(currentIndex), false);
+            requestAnimationFrame(() => {
+                applyCardStyles(false);
+                startAutoplay();
+            });
+        });
+
+        // Re-apply on resize
+        window.addEventListener('resize', () => {
+            setTrackX(trackXForIndex(currentIndex), false);
+            applyCardStyles(false);
+        });
+
+        // Pause on hover
+        const wrapper = document.getElementById('testimonial-carousel-wrapper');
+        wrapper.addEventListener('mouseenter', () => clearInterval(autoTimer));
+        wrapper.addEventListener('mouseleave', () => { clearInterval(autoTimer); startAutoplay(); });
+    })();
+    </script>
+
 
     <!-- Final CTA Section -->
     <section class="py-20 px-4">
