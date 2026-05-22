@@ -128,15 +128,15 @@ const URL = Astro.url.href;
                             link: null,
                         },
                     ].map((item, idx) => (
-                        <div class="group relative bg-white dark:bg-neutral-900/40 p-8 rounded-[2.5rem] border border-neutral-200 dark:border-neutral-800 transition-all duration-500 hover:bg-white dark:hover:bg-neutral-900 hover:shadow-2xl hover:-translate-y-2 overflow-hidden">
+                        <div class="group relative bg-white dark:bg-[#162947] p-8 rounded-[2.5rem] border border-neutral-200 dark:border-secondary/20 transition-all duration-500 hover:bg-neutral-50 dark:hover:bg-[#1e355b] hover:border-secondary/50 shadow-sm hover:shadow-[0_20px_50px_rgba(0,0,0,0.06)] dark:hover:shadow-[0_20px_50px_rgba(128,204,226,0.2)] hover:-translate-y-1.5 overflow-hidden">
                             <div class="absolute -right-2 -bottom-2 text-7xl font-black text-neutral-100 dark:text-neutral-800/30 group-hover:text-primary/10 transition-colors pointer-events-none">
                                 0{idx + 1}
                             </div>
                             <div class="relative z-10">
-                                <div class="mb-6 inline-flex p-4 bg-neutral-50 dark:bg-neutral-800 rounded-2xl shadow-sm border border-neutral-100 dark:border-neutral-700 group-hover:bg-primary group-hover:border-primary transition-all duration-500">
+                                <div class="mb-6 inline-flex p-4 bg-neutral-50 dark:bg-[#0f1d32] rounded-2xl shadow-sm border border-neutral-200 dark:border-secondary/20 group-hover:bg-primary dark:group-hover:bg-[#0f1d32] group-hover:border-primary transition-all duration-500">
                                     <Icon
                                         name={item.icon}
-                                        class="size-6 text-secondary group-hover:text-white transition-colors"
+                                        class="size-6 text-secondary group-hover:text-white dark:group-hover:text-secondary transition-colors duration-300"
                                     />
                                 </div>
                                 <h4 class="text-xs font-bold text-secondary uppercase tracking-[0.2em] mb-2">
@@ -165,7 +165,7 @@ const URL = Astro.url.href;
 
             <!-- Formulario WhatsApp -->
             <div
-                class="bg-neutral-50 dark:bg-neutral-900/60 border border-neutral-200 dark:border-neutral-800 p-8 md:p-12 rounded-[2.5rem] shadow-2xl relative overflow-hidden"
+                class="bg-neutral-50 dark:bg-[#162947] border border-neutral-200 dark:border-secondary/20 p-8 md:p-12 rounded-[2.5rem] shadow-2xl relative overflow-hidden"
             >
                 <div
                     class="absolute top-0 right-0 w-32 h-32 bg-secondary/10 rounded-full blur-3xl -mr-16 -mt-16"
@@ -189,7 +189,7 @@ const URL = Astro.url.href;
                                     type="text"
                                     id="name"
                                     required
-                                    class="w-full px-6 py-4 bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-2xl focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all dark:text-white"
+                                    class="w-full px-6 py-4 bg-white dark:bg-[#0f1d32] border border-neutral-200 dark:border-secondary/20 rounded-2xl focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all dark:text-white"
                                     placeholder="Su nombre"
                                 />
                             </div>
@@ -202,7 +202,7 @@ const URL = Astro.url.href;
                                     type="tel"
                                     id="phone"
                                     required
-                                    class="w-full px-6 py-4 bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-2xl focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all dark:text-white"
+                                    class="w-full px-6 py-4 bg-white dark:bg-[#0f1d32] border border-neutral-200 dark:border-secondary/20 rounded-2xl focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all dark:text-white"
                                     placeholder="Ej: 78300509"
                                 />
                             </div>
@@ -215,7 +215,7 @@ const URL = Astro.url.href;
                             >
                             <select
                                 id="service"
-                                class="w-full px-6 py-4 bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-2xl focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all dark:text-white appearance-none"
+                                class="w-full px-6 py-4 bg-white dark:bg-[#0f1d32] border border-neutral-200 dark:border-secondary/20 rounded-2xl focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all dark:text-white appearance-none"
                             >
                                 <option value="Plomería General"
                                     >Plomería General</option
@@ -241,7 +241,7 @@ const URL = Astro.url.href;
                                 id="message"
                                 rows="4"
                                 required
-                                class="w-full px-6 py-4 bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-2xl focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all dark:text-white resize-none"
+                                class="w-full px-6 py-4 bg-white dark:bg-[#0f1d32] border border-neutral-200 dark:border-secondary/20 rounded-2xl focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all dark:text-white resize-none"
                                 placeholder="Describa brevemente lo que necesita..."
                             ></textarea>
                         </div>
