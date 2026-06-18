@@ -47,27 +47,42 @@ import BaseLayout from "@layouts/BaseLayout.astro";
                     title: "Instalación Hidrosanitaria Industrial", 
                     category: "Ingeniería", 
                     desc: "Implementación de sistemas de alta presión para complejo industrial en Cochabamba.",
-                    video: "C1fWiKV9EZs?si=Bp7Cw8VArZsP0v1h"
+                    video: "C1fWiKV9EZs?si=Bp7Cw8VArZsP0v1h",
+                    type: "youtube"
                 },
                 { 
-                    title: "Red de Gas Natural Domiciliario", 
-                    category: "Gas Natural", 
-                    desc: "Proyecto de expansión de red interna para edificio residencial multifamiliar.",
-                    video: "C1fWiKV9EZs?si=Bp7Cw8VArZsP0v1h" // Usando el mismo como ejemplo
+                    title: "Instalación Hidrosanitaria en Edificios", 
+                    category: "Plomería", 
+                    desc: "Tendido e instalación de tuberías hidrosanitarias para edificio multifamiliar en obra gruesa.",
+                    video: "7652181348400155924",
+                    type: "tiktok"
                 }
             ].map((project, idx) => (
                 <div class="group relative flex flex-col space-y-6">
                     <!-- Video Container -->
-                    <div class="relative aspect-video w-full overflow-hidden rounded-[2.5rem] shadow-2xl bg-neutral-200 dark:bg-neutral-800 border border-neutral-200/50 dark:border-neutral-700/50 transition-all duration-500 group-hover:shadow-primary/20 group-hover:-translate-y-2">
-                        <iframe
-                            class="absolute top-0 left-0 w-full h-full"
-                            src={`https://www.youtube.com/embed/${project.video}`}
-                            title={project.title}
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen>
-                        </iframe>
-                    </div>
+                    {project.type === "youtube" ? (
+                        <div class="relative aspect-video w-full overflow-hidden rounded-[2.5rem] shadow-2xl bg-neutral-200 dark:bg-neutral-800 border border-neutral-200/50 dark:border-neutral-700/50 transition-all duration-500 group-hover:shadow-primary/20 group-hover:-translate-y-2">
+                            <iframe
+                                class="absolute top-0 left-0 w-full h-full"
+                                src={`https://www.youtube.com/embed/${project.video}`}
+                                title={project.title}
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    ) : (
+                        <div class="relative w-full overflow-hidden rounded-[2.5rem] shadow-2xl bg-[#0f172a] border border-neutral-700/50 transition-all duration-500 group-hover:shadow-primary/20 group-hover:-translate-y-2 flex justify-center" style="min-height: 750px;">
+                            <iframe
+                                class="absolute top-0 left-0 w-full h-full"
+                                src={`https://www.tiktok.com/embed/v2/${project.video}`}
+                                title={project.title}
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    )}
 
                     <!-- Project Info -->
                     <div class="px-4">

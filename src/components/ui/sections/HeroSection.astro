@@ -1,8 +1,6 @@
 ---
 import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
 import SecondaryCTA from "@components/ui/buttons/SecondaryCTA.astro";
-import { Image } from "astro:assets";
-import portada from "@images/portada.webp";
 
 const {
     title,
@@ -27,13 +25,17 @@ interface Props {
 
 <!-- Hero Section -->
 <section class="relative overflow-hidden">
-    <!-- Background Image with Overlay -->
+    <!-- Background Video with Overlay -->
     <div class="absolute inset-0 z-[-1]">
-        <Image
-            class="object-cover object-center w-full h-[35rem] md:h-[45rem]"
-            src={portada}
-            alt="Portada Plomería Campos"
-        />
+        <video
+            id="hero-bg-video"
+            class="object-cover object-[70%_center] md:object-center w-full h-[35rem] md:h-[45rem]"
+            src="/hero-video.mp4"
+            autoplay
+            muted
+            playsinline
+            preload="auto"
+        ></video>
         <div
             class="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/20 dark:from-[#0f1d32] dark:via-[#0f1d32]/90 dark:to-transparent"
         >
@@ -119,3 +121,16 @@ interface Props {
         </div>
     </div>
 </section>
+
+<script is:inline>
+(function () {
+    const video = document.getElementById('hero-bg-video');
+    if (!video) return;
+    video.addEventListener('ended', () => {
+        setTimeout(() => {
+            video.currentTime = 0;
+            video.play();
+        }, 3000);
+    });
+})();
+</script>
